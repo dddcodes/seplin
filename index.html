@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>SEPLIN</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./seplin logo.png" type="image/png">
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+	<!--Items del menu-->
+	<div class="btnsBox" id="btnsBox">
+
+		<button id="startQuestBtn" class="llamativeBtn"> 
+			NUEVO QUIZ
+		</button>
+		
+		<button id="editFilterBtn">
+			EDITAR FILTROS
+		</button>
+
+		<button id="filterSubmitBtn" style="display: none;">
+			SUBIR FILTROS
+		</button>
+
+		<button id="questSubmitBtn" class="llamativeBtn" style="display: none;">
+			CONTESTAR
+		</button>
+
+		<button id="showExBtn" style="display: none;">
+			EXPLICACIÓN
+		</button>
+
+		<button id="submitNewQuestBtn" style="display: none;">
+			GUARDAR
+		</button>
+
+		<button id="submitNewQuestConfirmBtn" class="fail" style="display: none;">
+			SEGURO?!?
+		</button>
+
+		<button id="submitNewQuestCancelBtn" class="success" style="display: none;">
+			CANCELAR
+		</button>
+
+		<button id="removeQuestBtn" style="display: none;">
+			REMOVER
+		</button>
+
+		<button id="removeQuestConfirmBtn" class="fail" style="display: none;">
+			SEGURO?!?
+		</button>
+
+		<button id="removeQuestCancelBtn" class="success" style="display: none;">
+			CANCELAR
+		</button>
+
+		<button id="showRemoveQuestBtn" style="display: none;">
+			MOSTRAR QUIZ
+		</button>
+
+		<button id="catalogRemoveConfirmBtn" class="fail" style="display: none;">
+			CONFIRMAR
+		</button>
+
+		<button id="catalogToWelcomePageBtn" style="display: none;">
+			VOLVER AL MENU
+		</button>
+
+		<button id="catalogToSetQuestPageBtn" style="display: none;">
+			CREAR UN QUIZ
+		</button>
+
+	</div>
+
+	<div id="pageContent" class="pageContent">
+
+		<div id="welcomePage">
+			<img width="200px" src="./seplin logo.png" style="margin: 30px 0 0 0;" alt="seplin logo quiz app web questionaries free netlify study active recall">
+			<p class="simpleBox" style="background-color: var(--main-clr);">S E P L I N <br/> W E B</p>
+
+			<p class="niceBox llamativeClr" style="font-size: 17px;"> 
+			🐣El boton AMARILLO es para comenzar QUIZES 🤪👇 <br/>
+			y con el otro puedes FILTRARLOS 🧐👌</p>
+
+			<button id="catalogPageBtn" style="margin-top: 20px;">Ver todos tus quizes</button>
+			<br/>
+			<button id="setQuestPageBtn" style="margin-top: 20px;">Crear un quiz</button>
+			<button id="removeQuestPageBtn" class="fail" style="margin-top: 20px;">Remover un quiz</button>
+
+		</div>
+
+		<div id="setQuestPage" style="display: none;">
+
+			<br/>
+			<div class="simpleBox">
+				<h3>Pregunta:</h3> 
+				<br/>
+				<input id="questionInput" type="text" placeholder="introduce la pregunta"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Respuesta:</h3>
+				<br/>
+				<input id="answerInput" type="text" placeholder="introduce la respuesta"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Respuesta incorrecta...</h3> 
+				<br/>
+
+				<input id="incorrectAnswer1Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+				<br/><br/>
+				
+				<input id="incorrectAnswer2Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+				<br/><br/>
+
+				<input id="incorrectAnswer3Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+				<br/><br/>
+
+				<input id="incorrectAnswer4Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Materia:</h3>
+				<br/> 
+				<select id="cat1Input">
+					<option value="">indefinida</option>
+					<option value="rob">🤖Robotica</option>
+					<option value="vs">vida saludable</option>
+					<option value="qui">🎇Quimica</option>
+					<option value="eng">English</option>
+					<option value="esp">Espanol</option>
+					<option value="his">⛩Historia</option>
+					<option value="val">Valores</option>
+					<option value="tecno">💻Tecnologia</option>
+					<option value="ef">Educacion Fisica</option>
+					<option value="fcye">FC y E</option>
+					<option value="aje">⚔Ajedrez</option>
+					<option value="art"> 🖋Artes</option>
+					<option value="tuto">tutoria</option>
+					<option value="emp">🏛Emprendimiento</option>
+				</select>
+				
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Mes:</h3>
+				<br/> 
+				<select id="cat2Input">
+					<option value="">indefinido</option>
+					<option value="1">1- Septiembre</option>
+					<option value="2">2- octubre</option>
+					<option value="3">3- noviembre</option>
+					<option value="4">4- diciembre</option>
+					<option value="5">5- enero</option>
+					<option value="6">6- febrero</option>
+					<option value="7">7- marzo</option>
+					<option value="8">8- abril</option>
+					<option value="9">9- mayo</option>
+					<option value="10">10- junio</option>
+					<option value="11">11- extra</option>
+				</select>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Explicacion:</h3>
+				<br/> 
+				<textarea id="exInput"></textarea>
+			</div><br/>
+
+			<button id="clearInputsBtn">LIMPIAR INPUTS</button>
+
+		</div>
+
+		<div id="removeQuestPage" style="display: none;">
+			<br/>
+			<div class="simpleBox">
+				<h3>ID del quiz que se desea remover:</h3>
+				<input type="number" id="removeQuestInput" placeholder="introducir numero (solo positivos)">
+
+			</div>
+			<br/><div class="simpleBox" ID="showRemoveQuestBtnFailMsg" style="display: none;">
+				<h3>NUMERO INVALIDO</h3>
+			</div>
+
+			<div id="showRemoveQuestMotherDiv" class="simpleBox" style="display:none;">
+				<h3>QUIZ POR ELIMINAR:</h3><br/><hr/><br/>
+				<div class="questEpicBox" id="showRemoveQuestDiv">
+		
+					
+		
+				</div>
+			</div>
+
+		</div>
+		
+		<!-- elegir los 2 filtros -->
+		<div id="filterLabel" style="display: none;">
+			
+			MATERIA:<br /> 
+			<select id="cat1FilterInput">
+				<option value="">Random</option>
+                <option value="rob">🤖Robotica</option>
+				<option value="vs">vida saludable</option>
+                <option value="qui">🎇Quimica</option>
+				<option value="eng">English</option>
+				<option value="esp">Espanol</option>
+				<option value="his">⛩Historia</option>
+				<option value="val">Valores</option>
+                <option value="tecno">💻Tecnologia</option>
+				<option value="ef">Educacion Fisica</option>
+				<option value="fcye">FC y E</option>
+                <option value="aje">⚔Ajedrez</option>
+                <option value="art"> 🖋Artes</option>
+				<option value="tuto">tutoria</option>
+                <option value="emp">🏛Emprendimiento</option>
+			</select>
+
+			<br /><br />
+			
+			MES: <br />
+			<select id="cat2FilterInput">
+				<option value="">Random</option>
+				<option value="1">1- Septiembre</option>
+				<option value="2">2- octubre</option>
+				<option value="3">3- noviembre</option>
+				<option value="4">4- diciembre</option>
+				<option value="5">5- enero</option>
+				<option value="6">6- febrero</option>
+				<option value="7">7- marzo</option>
+				<option value="8">8- abril</option>
+				<option value="9">9- mayo</option>
+				<option value="10">10- junio</option>
+				<option value="11">11- extra</option>
+			</select>
+
+		</div>
+
+		<div id="catalogPage" style="display: none;"></div>
+
+		<div id="editQuestPage" style="display: none;">
+
+			<br/>
+			<div class="simpleBox">
+				<h3>Pregunta:</h3> 
+				<br/>
+				<input id="editQuestionInput" type="text"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Respuesta:</h3>
+				<br/>
+				<input id="editAnswerInput" type="text"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Respuesta incorrecta...</h3> 
+				<br/>
+
+				<input id="editIncorrectAnswer1Input" type="text" />
+				<br/><br/>
+				
+				<input id="editIncorrectAnswer2Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+				<br/><br/>
+
+				<input id="editIncorrectAnswer3Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+				<br/><br/>
+
+				<input id="editIncorrectAnswer4Input" type="text" placeholder="introduce una respuesta incorrecta"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Materia:</h3>
+				<br/> 
+				<input id="editCat1Input" type="text" placeholder="introduce la materia"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Mes:</h3>
+				<br/> 
+				<input id="editCat2Input" type="text" placeholder="introduce el mes"/>
+			</div><br/>
+
+			<div class="simpleBox">
+				<h3>Explicacion:</h3>
+				<br/> 
+				<textarea id="editExInput"></textarea>
+			</div><br/>
+
+		</div>
+
+		
+	</div>
+	
+	
+	<!-- div para mostrar la pregunta -->
+	<div id="questsDiv" class="questBox"></div>
+	<br/>
+	<div id="answerRevelationDiv" class="answerRevelationDiv"></div>
+	
+	<!-- JS -->
+    <script type="text/javascript" src="./script.js"></script>
+	
+</body>
+</html>
