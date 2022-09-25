@@ -1,0 +1,318 @@
+
+:root{
+    --main-clr: #181818; /*clr principal*/
+    --main-clr-2: #262729 ; /*mas claro*/
+    --main-clr-3: #3b3d40; /*aun mas claro*/
+    --main-clr-4: #525252; /*mucho mas claro*/
+
+    --clr: white; /*para las letras, bordes, :active, etc*/
+    --green: #409456;
+    --red: #944040;
+    --blue: rgb(38, 2, 169);
+    --blue-2: rgb(75, 38, 209);
+    --blue-3: rgb(128, 100, 229); 
+    --blue-4: rgb(182, 163, 252);
+
+    --llamative-clr: #ffff00; /*clr llamativo para hovers, etc*/
+
+    --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
+    --universal-border-rad: 4px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    border-radius: var(--universal-border-rad);
+
+    font-family: arial;
+    text-decoration: none;
+    color: var(--clr);
+    cursor:auto;
+    outline: none;
+
+    transition: var(--universal-trans);
+}
+
+*::selection{
+    background: var(--llamative-clr);
+    color: var(--main-clr);
+}
+
+body {
+    background: var(--main-clr);
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/*/
+
+
+/*estilos generales*/
+
+.pageContent{
+    width: 90%;
+    max-width: 900px;
+    margin: 0;
+    margin-bottom: 50px;
+
+}
+
+.questBox{
+    padding-top: 10px;
+    margin-bottom: 25px;
+    margin-top: -50px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.questEpicBox *{
+    margin-bottom: 10px;
+}
+
+.questEpicBox select{
+    width:90vw;
+    max-width: 900px;
+}
+
+.answerRevelationDiv{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.answerRevelationDiv *{
+    width: 100%;
+}
+
+.answerRevelationDiv *{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.niceBox{
+    padding: 3px;
+    background-color: var(--main-clr-2);
+    border-radius: var(--universal-border-rad);
+}
+
+.simpleBox{
+    width: 85vw;
+    max-width: 900px;
+    padding: 20px;
+    background-color: var(--main-clr-2);
+    border-radius: 0 var(--universal-border-rad) var(--universal-border-rad);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.a{
+    margin-left: -10px;
+    width: 95%;
+}
+
+.success{
+    background-color: var(--green);
+}
+
+.fail{
+    background-color: var(--red);
+}
+
+.llamativeClr{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+}
+.llamativeClr::selection{
+    background-color: var(--main-clr);
+    color: var(--llamative-clr);
+}
+.mainClr3{
+    background-color: var(--main-clr-3);
+}
+
+
+
+
+.simpleBox img{
+    background-color: var(--main-clr-3);
+    outline: none solid 5px;
+    max-width: 300px;
+	border-radius: 6px;
+}
+
+.simpleBox img:hover{
+    outline: var(--clr) solid 5px;
+    background: var(--clr);
+}
+
+/*inputs*/
+
+button{
+    background-color: var(--main-clr);
+    padding: 8px;
+    border: var(--clr) solid 2px;
+
+    height: 80px;
+    margin: 0 10px 0 10px;
+    min-width: 120px;
+
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: var(--main-clr-2);
+}
+
+button:active ,
+.llamativeBtn{
+    color: var(--main-clr);
+    background-color: var(--llamative-clr);
+    border: var(--llamative-clr) solid 2px;
+
+}
+
+.llamativeBtn:hover{
+    background-color: var(--main-clr);
+    color: var(--llamative-clr);
+}
+
+.llamativeBtn:active{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+}
+
+select{
+    background-color: var(--main-clr);
+
+    font-size: 17px;
+
+    width: 90%;
+    max-width: 900px;
+
+    height: 60px;
+    border: var(--clr) solid 2px;
+
+    padding: 5px;
+}
+
+select option{
+    background-color: var(--main-clr-2);
+    color: var(--clr);
+}
+
+select:hover{
+    background-color: var(--main-clr-2);
+}
+
+
+input,textarea{
+    background-color: var(--main-clr);
+    height: 20px;
+    font-size: 18px;
+
+    width: 80vw;
+    max-width: 500px;
+}
+
+input:hover,
+textarea:hover{
+    border-color: var(--llamative-clr);
+    color: var(--llamative-clr);
+}
+
+/*estilos del menu de btns*/
+
+.btnsBox{
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-clr);
+
+    padding: 0 0 6px 0;
+
+    border-radius: 0;
+    border-top: 3px solid var(--clr);
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    z-index: 2;
+    position: fixed;
+    bottom: -10px;
+
+}
+
+.btnsBox button{
+    justify-content: center;
+    align-items: center;
+}
+
+.miniBtn{
+    height: 30px;
+    min-width: 60px;
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.largeBtn{
+    border-radius: 100px;
+    background-color: var(--clr);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.largeBtn ion-icon{
+    color: var(--main-clr);
+    font-size: 35px;
+}
+
+.largeBtn:hover{
+    background-color: var(--llamative-clr);
+}
+
+p a{
+    color: var(--llamative-clr);
+}
+
+.blue{
+    background-color: var(--blue);
+    color: var(--clr);
+}
+
+.blue-2{
+    background-color: var(--blue-2);
+    color: var(--clr);
+}
+
+.blue-3{
+    background-color: var(--blue-3);
+    color: var(--main-clr);
+}
+
+.blue-4{
+    background-color: var(--blue-4);
+    color: var(--main-clr);
+}
+
+.main-clr{
+    background-color: var(--main-clr);
+    color: var(--clr);
+}
