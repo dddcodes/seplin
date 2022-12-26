@@ -1,6 +1,7 @@
 const testMode = false;
 const testQuestN = 0;
 const catalog_questsPerClick = 20;
+const catalogQuestionWordLimit = 65;
 /*[c] FUNCIONES */
 //utilities
 function setRandomNumber(min = 0, max = 4){
@@ -151,7 +152,7 @@ LS_createItem('quests',()=>{
         políticas y sociales del país.`,
         true
     );
-    setQuest("cúales son las propiedades EXTENSIVAS en Química ?",
+    setQuest("cúales son las propiedades EXTENSIVAS en Química?",
         "las que dependen del tamaño",
         ["las que no dependen del tamaño",
         "las que tienen baja fuerza intermolecular",
@@ -172,6 +173,8 @@ saveQuestsData();
 console.log(questList);
 
 //QUESTS MANIPULATION
+
+let questsToRemove = [];
 function removeQuest(ubication){
     questList.splice(ubication, 1);
     saveQuestsData();
@@ -181,15 +184,31 @@ function removeConfirm(ubication){
     //aparece el btn para confirmar
     appear(catalogRemoveConfirmBtn);
     
-    //se selecciona
+    //cambia de color la caja del quiz
     const box = document.querySelector(`#quest${ubication}`);
     box.style.background = "var(--main-clr-3)";
 
+    //se guarda para eliminar despues
+    questsToRemove.push(ubication);
+
     catalogRemoveConfirmBtn.addEventListener("click",()=>{
-        removeQuest(ubication);
+
+        let questsToRemoveInOrder = questsToRemove.sort();
+        questsToRemoveInOrder = questsToRemoveInOrder.reverse();
+
+        
+        for (let i = 0; i < questsToRemoveInOrder.length; i++) {
+
+            const element = questsToRemoveInOrder[i];
+            removeQuest(element);
+
+        }
+        
         disappear(catalogRemoveConfirmBtn);
         box.style.background = "var(--red)";
-        box.innerHTML = "ELIMINADO";
+        box.innerHTML = "QUIZ ELIMINADO PERMANENTEMENTE";
+        
+        questsToRemove = [];
     });
 };
 function editQuest( ubication, question, answer, incorrectAnswer, cat1, cat2, ex){
@@ -264,6 +283,65 @@ function openWelcomePage(){
     appear(startQuestBtn);
     appear(editFilterBtn);
 }
+var catalog_quizesGenerated = 0;
+function generateQuizes(){
+    resaltedMsg("generate()")
+    var m = 0;
+    for (let i = catalog_quizesGenerated; m < catalog_questsPerClick; i++) {
+        resaltedMsg("ciclo iniciado " + i)
+        catalog_quizesGenerated++
+        m++
+        const element = questList[i];
+        if(!element){
+            resaltedMsg("no hay mas quizes!!!");
+            catalogPage.innerHTML +=`<br/><div class="simpleBox llamativeClr">No hay mas quizes guardados!!!</div>`;;
+            break;
+        }
+
+        element.question = (element.question.length >= catalogQuestionWordLimit)?
+            element.question.slice(0, catalogQuestionWordLimit) + "...":
+            element.question;
+
+        const isDefault = (element.default)?" <p class='niceBox subYellowBox' style='margin-top: -20px;'>Default Quiz :D ... </p>":"";
+        const color = (element.default)?"llamativeClr":"";
+
+        catalogPage.innerHTML += `
+
+        <br/>
+        <div class="simpleBox ${color}" id="quest${i}" style="text-align: left; ">
+            
+
+            <p style="color: var(--main-clr);" style="margin: 10px;">${isDefault}</p>
+        
+            
+            <button class="miniBtn fail" onclick="removeConfirm(${i})">
+            <ion-icon name="close">X</ion-icon>
+            </button>
+            
+            <button class="miniBtn" onclick="openEditQuestPage(${i});">
+            <ion-icon name="pencil">Edit</ion-icon>
+            </button>
+
+            <button class="miniBtn" id="catalogQuestViewBtn${i}"
+                onclick="view(${i}, ${(element.default)?true:false});">
+                <ion-icon name="eye">o</ion-icon>
+            </button>
+
+            <button class="miniBtn" id="catalogQuestRemoveViewBtn${i}"
+                onclick="removeView(${i});">
+                <ion-icon name="eye-off">ø</ion-icon>
+            </button>
+
+            <br/>
+            ${i} 👉 ${element.question}
+            <br/>
+            <div id="quest${i}viewBox" style="display:none;"></div>
+        </div>`
+        
+    }
+
+    catalogPage.innerHTML += "<br/><hr/>"
+}
 function showCatalog(){
     clearBtnsBar();
     clearPageArea();
@@ -273,77 +351,12 @@ function showCatalog(){
     appear(catalogPage);
     appear(catalogGenerateBtn);
 
-    var n = 0;
-
-    function generate(){
-        console.log("SIUUUu");
-        var m = 0;
-        for (let i = n; m < catalog_questsPerClick; i++) {
-            n++
-            m++
-            if(!questList[i]){
-                const msg = `<br/><div class="simpleBox llamativeClr">No hay mas quizes guardados!!!</div>`
-                catalogPage.innerHTML += msg;
-                break;
-            }
-            const element = questList[i];
-            console.log(n)
-            const catalogQuestionWordLimit = 65;
-    
-            element.question = (element.question.length >= catalogQuestionWordLimit)?
-                element.question.slice(0, catalogQuestionWordLimit) + "...":
-                element.question;
-    
-            const isDefault = (element.default)?" <p class='niceBox subYellowBox' style='margin-top: -20px;'>Default Quiz :D ... </p>":"";
-            const color = (element.default)?"llamativeClr":"";
-
-            catalogPage.innerHTML += `
-
-            <br/>
-            <div class="simpleBox ${color}" id="quest${i}" style="text-align: left; ">
-                
-    
-                <p style="color: var(--main-clr);" style="margin: 10px;">${isDefault}</p>
-            
-                
-                <button class="miniBtn fail" onclick="removeConfirm(${i})">
-                <ion-icon name="close">X</ion-icon>
-                </button>
-                
-                <button class="miniBtn" onclick="openEditQuestPage(${i});">
-                <ion-icon name="pencil">Edit</ion-icon>
-                </button>
-    
-                <button class="miniBtn" id="catalogQuestViewBtn${i}"
-                    onclick="view(${i}, ${(element.default)?true:false});">
-                    <ion-icon name="eye">o</ion-icon>
-                </button>
-    
-                <button class="miniBtn" id="catalogQuestRemoveViewBtn${i}"
-                    onclick="removeView(${i});">
-                    <ion-icon name="eye-off">ø</ion-icon>
-                </button>
-    
-                <br/>
-                ${i} 👉 ${element.question}
-                <br/>
-                <div id="quest${i}viewBox" style="display:none;"></div>
-            </div>`
-            
-        }
-
-        catalogPage.innerHTML += "<br/><hr/>"
-    }
-
-    generate();
-    catalogGenerateBtn.addEventListener("click", generate)
+    catalog_quizesGenerated = 0
+    generateQuizes();
 
 
 };
-
 function home(){
-    console.log("sigo vivo putos")
-
     openWelcomePage()
 
     btnsBar.style.background = "var(--main-clr)"
@@ -929,6 +942,7 @@ catalogToSetQuestPageBtn.addEventListener("click", ()=>{
     appear(submitNewQuestBtn);
     appear(setQuestPage);
 });
+catalogGenerateBtn.addEventListener("click", generateQuizes)
 
 homeBtn.addEventListener("click", home);
 

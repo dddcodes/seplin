@@ -30,11 +30,11 @@
 		</button>
 
 		<button id="startQuestBtn" class="llamativeBtn"> 
-			NUEVO QUIZ
+			ESTUDIAR
 		</button>
 		
 		<button id="editFilterBtn">
-			FILTROS
+			FILTRAR
 		</button>
 
 		<button id="filterSubmitBtn" style="display: none;">
@@ -99,36 +99,38 @@
 		
 		<main id="welcomePage">
 			
-			<img width="200px" src="./seplin logo.png" style="margin-top: 30px;" alt="seplin logo quiz app web questionaries free netlify study active recall">
-			<p class="simpleBox transparent" style="color: var(--main-clr);">
-				S E P L I N <br/> W E B <br/>~ Nice Update ~
+			<div class="imgBox">
+				<img width="80px" src="./seplin logo.png" style="margin-top: 10px;" alt="seplin logo quiz app web questionaries free netlify study active recall">
+			</div>
+			<p class="squareBox" style="color: var(--clr);">
+				S E P L I N
 			</p>
 			
-			<p class="niceBox llamativeClr" style="font-size: 17px; margin-top: -5px;"> 
-			🐣El boton AMARILLO es para comenzar QUIZES 🤪👇</p>
+			<p class="niceBox llamativeClr square" style="font-size: 17px; margin-top: -5px;"> 
+			🐣El boton AMARILLO es para ESTUDIAR 🤪👇</p>
 
 			<button id="catalogPageBtn">CATALAGO DE QUIZES</button>
 			<br/>
 			<button id="setQuestPageBtn" >CREAR</button>
-			<button id="removeQuestPageBtn" class="fail" style="margin-top: 20px; ">REMOVER</button>
-			
-			<a href="https://github.com/dddcodes/seplin/" target="_blank">
-				<button style="background-color: var(--green);" >
-					<ion-icon name="logo-github"></ion-icon>
-					Codigo fuente
-				</button>
-			</a>
+			<button id="removeQuestPageBtn" style="margin-top: 20px; ">REMOVER</button>
+			<br>
+			<button id="advancedSettingsPageBtn" style="margin-top: 20px; opacity: 50%;">OPCIONES AVANZADAS</button>
 
-			<p class="simpleBox" style="margin-top: 10px;">
+			
+
+			<p class="squareBox " style="margin-top:20px; padding-top: 130px; background-color: var(--main-clr);">
 				
-				favor de reportar fallos en mis redes: 
-				<br/>
-				IG: <a href="https://www.instagram.com/denm_rl/" target="_blank" >denm_rl </a>
-				<br/> 
-				FB:<a href="https://www.facebook.com/profile.php?id=100070618178175" target="_blank"> Den oliv</a>
-				<br/>
-				Email:<a href="https://mail.google.com/mail/#search/denoliv100sexydev%40gmail.com" target="_blank"> denoliv100sexydev@gmail.com</a>
+				IG:<a href="https://www.instagram.com/denm_rl/" target="_blank" > denm_rl</a>
 				
+				| FB:<a href="https://www.facebook.com/profile.php?id=100070618178175" target="_blank"> Den oliv</a>
+				
+				<br><br>
+
+				<a href="https://github.com/dddcodes/seplin/" target="_blank" style="margin: 10px;">
+					<ion-icon name="logo-github" color="none"></ion-icon>
+					Codigo fuente
+				</a>
+
 			</p>
 
 		</main>
@@ -286,7 +288,7 @@
 			<br/>
 		</main>
 
-		<main id="editQuestPage"">
+		<main id="editQuestPage">
 
 			<br/>
 			<div class="simpleBox">
@@ -331,6 +333,7 @@
 
 			<div class="simpleBox">
 				<h3>Explicacion:</h3>
+				<p></p>
 				<br/> 
 				<textarea id="editExInput" style="margin-bottom: 60px;"></textarea>
 			</div><br/>

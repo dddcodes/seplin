@@ -20,7 +20,7 @@
     --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
     --universal-border-rad: 4px;
 
-    --principal-bg-img: url("./bg.jpg");
+    --principal-bg-img: url("./bg.png");
 }
 
 *{
@@ -52,7 +52,7 @@ body {
     justify-content: center;
     text-align: center;
 
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 }
 
 
@@ -61,15 +61,25 @@ body {
 
 /*estilos generales*/
 #welcomePage{
+    background-color: var(--main-clr-2);
+    margin-top: -80px;
+}
+
+#welcomePage > .imgBox{
     background-color: none;
     background-image: var(--principal-bg-img);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    width: 100%;
+    border-radius:  4px 4px 0 0;
+    
+
 }
 
 .pageContent{
-    width: 90vw;
+    width: 100vw;
     max-width: 900px;
     min-height: 80vh;
     margin: 0;
@@ -101,7 +111,7 @@ body {
 }
 
 .questEpicBox select{
-    width:90vw;
+    width:100%;
     max-width: 900px;
 }
 
@@ -154,6 +164,22 @@ body {
 
 .transparent{
     background: none;
+}
+
+.square{
+    border-radius: 0;
+}
+
+.squareBox{
+    width: 100%;
+    max-width: 900px;
+    padding: 20px 0 20px 0;
+
+    background-color: var(--main-clr-2);
+    border-radius: 0;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .llamativeClr{
@@ -317,11 +343,11 @@ textarea:hover{
 }
 
 .homeBtn:hover{
-    border-radius: 20%;
+    opacity: 50%;
 }
 
 .homeBtn ion-icon{
-    color: var(--main-clr);
+    color: var(--clr);
 }
 
 .createQuestBtn{
