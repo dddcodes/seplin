@@ -1,0 +1,526 @@
+
+:root{
+    --main-clr: #181818; /*clr principal*/
+    --main-clr-2: #262729 ; /*mas claro*/
+    --main-clr-3: #3b3d40; /*aun mas claro*/
+    --main-clr-4: #525252; /*mucho mas claro*/
+
+    --clr: white; /*para las letras, bordes, :active, etc*/
+    --anti-clr: black;
+    --clr-2: rgb(198, 198, 198); /*--clr pero mas oscuro*/
+    --green: #409456;
+    --red: #944040;
+
+    --llamative-clr: #ffff00; /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
+    --llamative-clr-darker: #c8c807;
+    --orange: rgb(243, 183, 72);
+
+    --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
+    --universal-border-rad: 4px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    border-radius: var(--universal-border-rad);
+
+    font-family: arial;
+    text-decoration: none;
+    color: var(--clr);
+    cursor:auto;
+    outline: none;
+
+    transition: var(--universal-trans);
+}
+
+*::selection{
+    background: var(--llamative-clr);
+    color: var(--main-clr);
+}
+
+body {
+    background: var(--main-clr);
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    padding-bottom: 70px;
+}
+
+
+/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/*/
+
+
+/*estilos generales*/
+#welcomePage{
+    width: 100%;
+    margin-top: -80px;
+    border-radius: 0 0 5px 5px;
+    background-color: var(--main-clr-2);
+}
+
+#welcomePage > .imgBox{
+    background-color: none;
+    background-image: var(--principal-bg-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    border-radius:  4px 4px 0 0;
+    
+
+}
+
+.pageContent{
+    width: 100vw;
+    max-width: 900px;
+    min-height: 80vh;
+    margin: 0;
+    margin-top: 80px;
+
+}
+
+.pageContent > main{
+    display: none;
+}
+
+#welcomePage > button,
+#welcomePage > a > button{
+    margin-top: 20px;
+}
+
+.questBox{
+    padding-top: 10px;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.questEpicBox *{
+    margin-bottom: 10px;
+}
+
+.questEpicBox select{
+    width:100%;
+    max-width: 900px;
+}
+
+.answerRevelationDiv{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.answerRevelationDiv *{
+    width: 100%;
+}
+
+.answerRevelationDiv *{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.niceBox{
+    padding: 3px;
+    background-color: var(--main-clr-2);
+    border-radius: var(--universal-border-rad);
+}
+
+.simpleBox{
+    width: 100%;
+    max-width: 900px;
+    padding: 20px 0 20px 0;
+
+    background-color: var(--main-clr-2);
+    border-radius: var(--universal-border-rad);
+
+    justify-content: center;
+    align-items: center;
+
+}
+.success{
+    background-color: var(--green);
+}
+
+.fail{
+    background-color: var(--red);
+}
+
+.transparent{
+    background: none;
+}
+
+.square{
+    border-radius: 0;
+}
+
+.squareBox{
+    width: 100%;
+    max-width: 900px;
+    padding: 20px 0 20px 0;
+
+    background-color: var(--main-clr-2);
+    border-radius: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.llamativeClr{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+}
+.llamativeClr::selection{
+    background-color: var(--main-clr);
+    color: var(--llamative-clr);
+}
+.mainClr3{
+    background-color: var(--main-clr-3);
+}
+
+
+
+
+.simpleBox img{
+    background-color: var(--main-clr-3);
+    outline: none solid 5px;
+    max-width: 300px;
+	border-radius: 6px;
+}
+
+.simpleBox img:hover{
+    outline: var(--clr) solid 5px;
+    background: var(--clr);
+}
+
+.subYellowBox{
+    background-color: var(--llamative-clr-darker);
+    color: var(--anti-clr);
+}
+
+/*inputs*/
+
+button{
+    background-color: var(--main-clr-2);
+    padding: 8px;
+    border: none;
+
+    height: 80px;
+    margin: 0 10px 0 10px;
+    min-width: 120px;
+
+    font-size: 16px;
+}
+
+#welcomePage button{
+    background-color: var(--main-clr-3);
+}
+
+button:hover{
+    background-color: var(--main-clr-3);
+}
+
+#welcomePage button:hover{
+    background-color: var(--main-clr-4);
+}
+
+
+.llamativeBtn{
+    color: var(--main-clr);
+    background-color: var(--llamative-clr);
+    border: var(--llamative-clr) solid 2px;
+
+}
+
+button:active,
+#welcomePage button:active{
+    color: var(--main-clr);
+    background-color: var(--clr);
+}
+
+.llamativeBtn:hover{
+    background-color: var(--main-clr);
+    color: var(--llamative-clr);
+}
+
+.llamativeBtn:active{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+}
+
+select{
+    background-color: var(--main-clr-2);
+
+    font-size: 17px;
+
+    width: 90%;
+    max-width: 900px;
+
+    height: 60px;
+    border: none;
+
+    padding: 5px;
+}
+
+select option{
+    background-color: var(--main-clr-2);
+    color: var(--clr);
+    border: none;
+}
+
+select:hover{
+    background-color: var(--main-clr-2);
+}
+
+
+input,textarea{
+    background-color: var(--main-clr-3);
+    height: 20px;
+    font-size: 18px;
+
+    width: 80%;
+    max-width: 800px;
+    border: none;
+}
+
+textarea{
+    height: 100px;
+}
+
+input:hover,
+textarea:hover{
+    background-color: var(--main-clr-4);
+}
+
+/*estilos del menu de btns*/
+
+.btnsBox{
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-clr);
+
+    padding: 0 0 6px 0;
+
+    border-radius: 0;
+    border-top: 3px solid var(--clr);
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    z-index: 2;
+    position: fixed;
+    bottom: -10px;
+
+}
+
+.btnsBox > button{
+    display: none;
+}
+
+.miniBtn{
+    height: 30px;
+    min-width: 60px;
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.homeBtn{
+    width: 80px;
+    min-width: 0;
+
+    padding-top: 12px;
+    font-size: 30px;
+}
+
+.homeBtn ion-icon{
+    color: var(--clr);
+}
+
+.createQuestBtn{
+    background-color: var(--main-clr-4);
+
+    min-width: 0;
+    width: 70px;
+    height: 70px;
+
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.createQuestBtn > ion-icon{
+    color: var(--clr);
+    font-size: 40px;
+    margin-bottom: -1px;
+}
+
+.createQuestBtn:hover{
+    background-color: var(--clr);
+}
+
+.createQuestBtn:hover > ion-icon{
+    color: var(--main-clr);
+}
+
+.generateQuestsBtn{
+    background-color: var(--clr);
+    color: var(--main-clr);
+    max-width: 150px;
+}
+
+.generateQuestsBtn:hover{
+    background-color: var(--clr-2);
+    border-color: var(--clr-2);
+}
+
+
+
+
+
+
+
+
+p a{
+    color: var(--llamative-clr);
+}
+
+
+.main-clr{
+    background-color: var(--main-clr);
+    color: var(--clr);
+}
+
+/*=====================================================================================*/
+
+
+
+
+.questionBox{
+    background-color: var(--main-clr-2);
+    border-radius: 7px;
+    margin: 20px 10px 20px 10px;
+    padding: 0 0 15px 0;
+
+    text-align: left;
+}
+.questionBox > .headBox{
+    display: flex;
+    height: 30px;
+    font-size: 25px;
+}
+
+
+
+.questionBox > .headBox > .questionNumber{
+    background-color: var(--main-clr-2);
+    width: min-content;
+
+    text-align: center;
+    padding: 0 5px 0 5px;
+
+}
+.questionBox > .headBox > .asign{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+
+    border-radius: 0 7px 0 0;
+
+}
+
+
+
+.questionBox > .questionBtnsBox{
+    height: 30px;
+    display:flex;
+}
+.questionBox > .questionBtnsBox > button{
+    border-radius: 0;
+    border: 0;
+    min-width: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-clr-3);
+    margin: 0;
+}
+.questionBox > .questionBtnsBox > button:hover{
+    background-color: var(--main-clr-4);
+}
+
+
+
+.questionBox > .question{
+    font-size: 20px;
+    padding: 5px 5px 0 5px;
+}
+
+
+.questionBox > .details{
+    padding: 0 5px 5px 5px;
+    display: none;
+}
+
+.questionBox > .details > *{
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+.questionBox > .details > .catsBox{
+    display: flex;
+}
+
+.questionBox > .details > .catsBox > *{
+    background-color: var(--main-clr-4);
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.questionBox > .details > .completeQuestionBox,
+.questionBox > .details > .correctAnswerBox,
+.questionBox > .details > .explanationBox,
+.questionBox > .details > .incorrectAnswersBox{
+    background-color: var(--main-clr-3);
+}
+
+.questionBox > .details > .completeQuestionBox > .title,
+.questionBox > .details > .correctAnswerBox > .title,
+.questionBox > .details > .explanationBox > .title,
+.questionBox > .details > .incorrectAnswersBox > .title{
+    font-size: 13px;
+}
+
+.questionBox > .details > .incorrectAnswersBox > .content > p{
+    background-color: var(--main-clr-4);
+    border-radius: 5px;
+
+    padding: 0 7px 0 7px;
+    margin: 5px 5px 0 0;
+}
