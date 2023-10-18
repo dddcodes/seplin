@@ -11,9 +11,9 @@
     --green: #549766;
     --red: #9b6767;
 
-    --llamative-clr: rgb(153, 132, 229); /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
-    --llamative-clr-1: rgb(184, 172, 227);
-    --llamative-clr-bg: linear-gradient(0deg, rgb(53, 40, 106) 0%, rgb(127, 97, 235) 100%);
+    --llamative-clr: rgb(111, 138, 236); /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
+    --llamative-clr-1: rgb(172, 191, 227);
+    --llamative-clr-bg: linear-gradient(0deg, rgb(40, 49, 106) 0%, rgb(97, 106, 235) 100%);
     --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
     --universal-border-rad: 4px;
 }
