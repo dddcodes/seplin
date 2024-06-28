@@ -1,21 +1,25 @@
 
 :root{
-    --main-clr: #303031 ; /*mas claro*/
-    --main-clr-2: #3b3d40; /*aun mas claro*/
-    --main-clr-3: #525252; /*mucho mas claro*/
+    --main-clr: #1e1e1f ;
+    --main-clr-2: #313131;
+    --main-clr-3: #525252;
     --main-clr-4: #817f7f;
 
-    --clr: white; /*para las letras, bordes, :active, etc*/
-    --anti-clr: black;
-    --clr-2: rgb(198, 198, 198); /*--clr pero mas oscuro*/
+    --alt-clr: var(--main-clr); /*para las letras, bordes, :active, etc*/
+    --clr: white;
     --green: #549766;
     --red: #9b6767;
+    --clr-2: #9d7e79;  
+    --clr-3: #ccac95;
+    --clr-4: #748b83;
+    --clr-5: #5b756c;
 
-    --llamative-clr: rgb(111, 138, 236); /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
-    --llamative-clr-1: rgb(172, 191, 227);
-    --llamative-clr-bg: linear-gradient(0deg, rgb(40, 49, 106) 0%, rgb(97, 106, 235) 100%);
+    --llamative-clr: #EDE152; /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
     --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
     --universal-border-rad: 4px;
+
+    --nice-combination: linear-gradient(90deg, rgba(255,241,0,1) 0%, rgba(209,152,2,1) 63%, rgb(255, 149, 0) 100%);
+    --nice-combination-2: linear-gradient(130deg, rgb(200, 194, 74) 0%, rgba(209,152,2,1) 10%, rgb(236, 66, 23) 100%);
 }
 
 *{
@@ -38,7 +42,7 @@
 }
 
 body {
-    background: var(--llamative-clr-bg);
+    background: var(--main-clr);
     font-size: 20px;
 
     display: flex;
@@ -181,7 +185,7 @@ body {
 }
 
 .llamativeClr{
-    background-color: var(--llamative-clr);
+    background: var(--nice-combination);
     color: var(--main-clr);
 }
 .llamativeClr::selection{
@@ -368,8 +372,8 @@ textarea:hover{
 }
 
 .createQuestBtn{
-    background-color: var(--main-clr-3);
-    border: white solid 2px;
+    background: var(--nice-combination);
+
 
     min-width: 0;
     width: 70px;
@@ -384,18 +388,17 @@ textarea:hover{
 }
 
 .createQuestBtn > ion-icon{
-    color: var(--clr);
+    color: var(--alt-clr);
     font-size: 40px;
     margin-bottom: -1px;
 }
 
 .createQuestBtn:hover{
-    background-color: var(--clr);
+    background: var(--clr);
+
+    transition: var(--universal-trans);
 }
 
-.createQuestBtn:hover > ion-icon{
-    color: var(--main-clr);
-}
 
 .generateQuestsBtn{
     background-color: var(--clr);
@@ -447,15 +450,16 @@ p a{
 
 
 .questionBox > .headBox > .questionNumber{
-    background-color: var(--main-clr-2);
+    background-color: var(--main-clr);
     width: min-content;
 
     text-align: center;
     padding: 0 5px 0 5px;
+    border-radius: 0;
 
 }
 .questionBox > .headBox > .asign{
-    background-color: var(--llamative-clr);
+    background: var(--nice-combination);
     color: var(--main-clr);
 
     font-size: 24px;
@@ -471,6 +475,7 @@ p a{
 .questionBox > .questionBtnsBox{
     height: 30px;
     display:flex;
+    border-bottom: white solid 2px;
 }
 .questionBox > .questionBtnsBox > button{
     border-radius: 0;
@@ -478,7 +483,7 @@ p a{
     min-width: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--main-clr-3);
+    background-color: var(--main-clr-2);
     margin: 0;
 }
 .questionBox > .questionBtnsBox > button:hover{
@@ -496,11 +501,12 @@ p a{
 .questionBox > .details{
     padding: 0 5px 5px 5px;
     display: none;
+    
 }
 
 .questionBox > .details > *{
     padding: 5px 0 5px 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 18px;
 
     margin-bottom: 7px;
@@ -512,8 +518,8 @@ p a{
 }
 
 .questionBox > .details > .catsBox > *{
-    background-color: var(--main-clr-4);
-    border-radius: 5px;
+    background-color: var(--main-clr-3);
+    border-radius: 3px;
     width: 100%;
     text-align: center;
     margin-right: 5px;
@@ -534,8 +540,8 @@ p a{
 }
 
 .questionBox > .details > .incorrectAnswersBox > .content > p{
-    background-color: var(--main-clr-4);
-    border-radius: 5px;
+    background-color: var(--main-clr-2);
+    border-radius: 3px;
 
     padding: 0 7px 0 7px;
     margin: 5px 5px 0 0;

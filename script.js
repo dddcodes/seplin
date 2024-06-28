@@ -1,3 +1,4 @@
+
 const testMode = false;
 const testQuestN = 0;
 const catalog_questsPerClick = 20;
@@ -46,7 +47,7 @@ function numberToMonth(number){
 
 };
 let asignatureList = [
-    "rob",
+    {abrev:"rob",complete:"Robótica"},
     "qui",
     "eng",
     "esp",
@@ -253,6 +254,7 @@ for (let i = 0; i < defaultQuests.length; i++) {
 }
 saveQuestsData();
 console.log(questList);
+
 
 //QUESTS MANIPULATION
 
@@ -1117,3 +1119,4 @@ fillAsignSelectInput(cat1Input)
 //completeAsignatureName(asignatureList[n])
 
 openWelcomePage();
+showCatalog()
