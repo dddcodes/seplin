@@ -1119,4 +1119,3 @@ fillAsignSelectInput(cat1Input)
 //completeAsignatureName(asignatureList[n])
 
 openWelcomePage();
-showCatalog()
