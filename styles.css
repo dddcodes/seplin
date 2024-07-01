@@ -37,8 +37,8 @@
 }
 
 *::selection{
-    background: var(--llamative-clr-1);
-    color: var(--main-clr);
+    background: var(--llamative-clr);
+    color: var(--alt-clr);
 }
 
 body {
@@ -404,11 +404,13 @@ textarea:hover{
     background-color: var(--clr);
     color: var(--main-clr);
     max-width: 150px;
+    border: white solid 2px;
 }
 
 .generateQuestsBtn:hover{
-    background-color: var(--clr-2);
-    border-color: var(--clr-2);
+    background-color: var(--main-clr);
+    color: white;
+
 }
 
 

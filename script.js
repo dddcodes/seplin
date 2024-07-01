@@ -1,124 +1,39 @@
-
-const testMode = false;
-const testQuestN = 0;
 const catalog_questsPerClick = 20;
 const catalogQuestionWordLimit = 250;
 /*[c] FUNCIONES */
 //utilities
-function setRandomNumber(min = 4, max = 7){
-    max++
-    return Math.floor(Math.random() * ( max - min) ) + min;
+function setRandomNumber(min = 4, max = 7){         
+    let num = Math.floor(Math.random() * ( max - min) ) + min;
+    return num
 };
 function numberToMonth(number){
-    let month = "fillOver";
-    switch (number) {
-        case 0:
-			month = "sin mes"
-			break;
-		case 1:
-            month = "septiembre"
-            break;
-        case 2:
-            month = "octubre"
-            break;    
-        case 3:
-            month = "noviembre"
-            break;
-        case 4:
-            month = "diciembre"
-            break;
-        case 5:
-            month = "enero"
-            break;    
-        case 6:
-            month = "febrero"
-        case 7:
-            month = "marzo"
-            break;    
-        case 8:
-            month = "abril"
-            break;     
-        default:
-            month = "mes indefinido"
-            break;
-    }
-
+    const monthList = ["Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre","Enero", "Febrero","Marzo", "Abril", "Mayo", "Junio", "Julio", ];
+    let month = monthList[number];
     return month;
 
 };
 let asignatureList = [
-    {abrev:"rob",complete:"Robótica"},
-    "qui",
-    "eng",
-    "esp",
-    "his",
-    "tec",
-    "ef",
-    "fcye",
-    "tlr",
-    "hum",
-    "lyc",
-    "fis",
-    "ldi",
-    "cs",
-    "ac",
-    "eco"
-]
+    ["eng", "Inglés"],
+    ["his","Historia"],
+    ["tec","Tecnología"],
+    ["ef","Deportes"],
+    ["tlr", "Lectura y Redacción"],
+    ["hum","Humanidades"],
+    ["lyc","Lengua y Comunicación"],
+    ["fis", "Física"],
+    ["cs", "Ciencias Sociales"],
+    ["ac", "Acompañamiento Académico"],
+    ["eco", "Economía"],
+    ["qui", "Química"]
+];
 
-function completeAsignatureName(abbreviation){
-    switch (abbreviation) {
-        case "rob":
-			return "Robótica"
-			break;
-        case "qui":
-            return "Química"
-            break;    
-        case "eng":
-            return "Inglés"
-            break;
-        case "esp":
-            return "Español"
-            break;     
-        case "his":
-            return "Historia"
-            break; 
-        case "tec":
-            return "Tecnología"
-            break;
-        case "ef":
-            return "Deportes"
-            break; 
-        case "fcye":
-            return "Formación Cívica y Ética"
-            break;
-        case "tlr":
-            return "Taller de Lectura y Redacción"
-            break;
-        case "hum":
-            return "Humanidades"
-            break;
-        case "lyc":
-            return "Lengua y Comunicación"
-            break;
-        case "fis":
-            return "Física"
-            break;
-        case "ldi":
-            return "Laboratorio de Investigación"
-            break;
-        case "cs":
-            return "Ciencias sociales"
-            break;
-        case "ac":
-            return "Acompañamiento Académico"
-            break;
-        case "eco":
-            return "Economía"
-            break;
-                
-        default:
-            return "Sin Asignatura"
-            break;
+function completeAsignatureName(abbrev){
+    for(let i= 0; i < asignatureList.length; i++){
+        e = asignatureList[i];
+
+        if(e[0] === abbrev){
+            return e[1]
+        }
     }
 };
 function REFRESH(){
@@ -127,10 +42,6 @@ function REFRESH(){
     clearPageArea();
 
     openWelcomePage();
-}
-function OV(onlineValue, offlineValue){
-    const returnValue = (navigator.onLine)? onlineValue : offlineValue;
-    return returnValue
 }
 
 //CONSOLE MSGS
@@ -171,7 +82,7 @@ function LS_createItem(itemName, creationCallback = ()=>{console.log("[LS] sin c
     if(!localStorage.getItem(itemName)){
 
         localStorage.setItem(itemName, "[]");
-        console.log(`[LS]se creo '${itemName}' en la LS`);
+        console.log(`[LS] se creo '${itemName}' en el LS`);
         creationCallback();
 
     };
@@ -194,7 +105,7 @@ function RESET_QUESTS(){
 let defaultQuests = [];
 function setQuest(question = "question", answer ="answer", 
     incorrectAnswer = ["incorrectAnswer1", "incorrectAnswer2", "incorrectAnswer3"], 
-    cat1 ="",cat2 =0, ex ="sin explicacion D:",
+    cat1 ="",cat2 =0, ex ="Sin explicacion",
     LS = false){
 
     let newQuestInfo = {
@@ -538,13 +449,10 @@ function editFilters(newCat1, newCat2){
 
 };
 /*[c] funcion para mostrar una nueva quest*/
-function startQuest(specificQuest){
+function startQuest(){
 
     clrConsoleText(`-------------------------------------`, 'black', 'white');
     clrConsoleText(`startQuest() iniciada`, 'white', 'blue');
-
-
-    btnsBar.style.background = "var(--main-clr)";
     
     clearPageArea();
     clearBtnsBar();
@@ -555,8 +463,6 @@ function startQuest(specificQuest){
     appear(showExBtn);
     appear(questBox);
 
-    
-
     let i = 0;
     let endLoop = false;
     let n = 0;
@@ -564,14 +470,7 @@ function startQuest(specificQuest){
 
     //[c] LOOP PARA BUSCAR UN QUEST
     do{
-        if(typeof specificQuest === "number") {
-            n = specificQuest;
-            break;
-        };   
-        if(testMode) {
-            n = testQuestN;
-            break;
-        } 
+
         if(his.length >= hisLimit) his.shift();
 
         console.log(`🔁 loop no. ${i}`)
@@ -597,23 +496,21 @@ function startQuest(specificQuest){
         if(!inHis & quizAsign === selectedAsign & quizMonth <= selectedMonth){
 
             chooseActualElement();
+            showMsg(`Cumple con los filtros`);
 
         }else if(!inHis & !selectedAsign & quizMonth <= selectedMonth){
 
             chooseActualElement();
-            resaltedMsg(`No hay cat1 (📒 materia)`);
-            showMsg(`No se ha especificado una Materia`);
+            showMsg(`Cumple con el filtro de mes`);
 
         }else if(!inHis & quizAsign === selectedAsign & !selectedMonth){
 
             chooseActualElement();
-            resaltedMsg(`No hay cat2 (📆 mes)`);
-            showMsg(`No se ha especificado un Mes`);
+            showMsg(`Cumple con el filtro de materia`);
 
         } else if(!inHis & !selectedAsign & !selectedMonth){
 
             chooseActualElement();
-            resaltedMsg(`no hay 📒cat1 ni 📆cat2`);
             showMsg(`No hay filtros activos`);
 
         } else {
@@ -629,7 +526,7 @@ function startQuest(specificQuest){
 
     }while (!endLoop)
 
-    const quest = (typeof specificQuest === "number")? questList[specificQuest] : questList[n];
+    const quest = questList[n];
     actualQuestN = n;
         
     success(`--> MOSTRANDO AHORA LA QUEST NO: ${n}`);
@@ -679,7 +576,7 @@ function startQuest(specificQuest){
             <p class="simpleBox llamativeClr">${quest.question}</p>
 
             <select id="questInput">
-                <option value="">selecciona una respuesta</option>
+                <option value="">Selecciona una respuesta</option>
                 ${answersHtml}
             </select>
 
@@ -695,7 +592,7 @@ function clearBtnsBar(){
         const element = btnsBarBtns[i];
         disappear(element);
     }
-    console.log("se ha limmpiado la barra de btns");
+    console.log("Se ha limmpiado la barra de btns");
 
     appear(homeBtn);
     window.scrollTo(0, 0);
@@ -742,7 +639,6 @@ const catalogQuestsArea = document.querySelector("#catalog_questsDiv");
 //btns:
 const btnsBarBtns = document.querySelectorAll("#btnsBox button");
 
-
 const filterSubmitBtn = document.querySelector("#filterSubmitBtn");
 const editFilterBtn = document.querySelector("#editFilterBtn");
 
@@ -774,8 +670,6 @@ const homeBtn = document.querySelector("#homeBtn");
 const cat1FilterInput = document.querySelector("#cat1FilterInput");
 const cat2FilterInput = document.querySelector("#cat2FilterInput");
 
-
-
 const questionInput = document.querySelector("#questionInput");
 const answerInput = document.querySelector("#answerInput");
 const exInput = document.querySelector("#exInput");
@@ -787,8 +681,6 @@ const incorrectAnswer4Input = document.querySelector("#incorrectAnswer4Input");
 
 const cat1Input = document.querySelector("#cat1Input");
 const cat2Input = document.querySelector("#cat2Input");
-
-
 
 const editQuestionInput = document.querySelector("#editQuestionInput");
 const editAnswerInput = document.querySelector("#editAnswerInput");
@@ -805,10 +697,8 @@ const editCat2Input = document.querySelector("#editCat2Input");
 
 const removeQuestInput = document.querySelector("#removeQuestInput");
 
-
-
 /*[c] VARIABLES */
-const hisLimit = (questList.length > 10)? 5: 2;
+const hisLimit = (questList.length > 5)? 0.6 * questList.length: 2;
 let his = [];
 
 let answersPerQuest = 3;
@@ -824,10 +714,9 @@ showExBtn.addEventListener("click", ()=> {
 
     appear(answerRevelationBox);
     answerRevelationBox.innerHTML = `
-        <p class="simpleBox">EXPLICACIÓN: <br/> ${questList[actualQuestN].ex || "No hay una explicacion excrita o ocurrio un error"}</p>`;
+        <p class="simpleBox">EXPLICACIÓN: <br/> ${questList[actualQuestN].ex || "No escribiste una para este quiz :/"}</p>`;
 
 });
-
 
 
 editFilterBtn.addEventListener("click", () => { //editar filtros...
@@ -886,26 +775,19 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     switch (selectedAnswer) {
 
         case correctAnswer: //si R correcta
-
-            success(`RESPUESTA CORRECTA (se a escrito: "${selectedAnswer}")`);
-            showReveal("success", `EXCELENTE! <br /> 
-                tu Respuesta fue: '${selectedAnswer}'`);
+            showReveal("success", `EXCELENTE!`);
             ex();
             isCorrectAnswer = true;
             break;
 
         case "": //si no hay R seleccionada
-
-            fail(`NO SE HA INGRESADO UNA RESPUESTA`);
-            showReveal("fail", "NO SE HA INGRESADO UNA RESPUESTA >:(");
+            showReveal("fail", "NO RESPONDISTE :(");
+            ex()
             break;
 
         default: //si R es incorrecta
-
-            fail(`RESPUESTA INCORRECTA ("${selectedAnswer}")`);
-            showReveal("fail", `PA' LA PROXIMA!<br/> 
-                -> Contestaste: '${selectedAnswer}' <br/> 
-                -> Respuesta correcta: '${correctAnswer}'`);
+            showReveal("fail", `INCORRECTA, SIGUE INTENTANDO!<br/> 
+                Respuesta correcta: '${correctAnswer}'`);
             ex();
             break;
 
@@ -916,7 +798,7 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
         answerRevelationBox.innerHTML = `
         <hr style='margin-bottom: 25px' />
         <p class="simpleBox" style="background: orange;">
-            WTF me parece que no hay respuesta correcta .-.
+            UH OH alparecer no hay respuesta correcta
             <br/>
             <img src="./what.gif">
         </p>`
@@ -927,7 +809,6 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     color = (correctAnswer)? color : "orange";
     questInput.style.background = color;
 });
-
 
 
 setQuestPageBtn.addEventListener("click", ()=>{
@@ -1034,7 +915,7 @@ showRemoveQuestBtn.addEventListener("click",()=>{
 
         showRemoveQuestDiv.innerHTML = `
         <p class="niceBox mainClr3">
-            MATERIA: ${e.cat1 || "indefinida"}. MES: ${numberToMonth(e.cat2)}.
+            MATERIA: ${completeAsignatureName(e.cat1) || "indefinida"}. MES: ${numberToMonth(e.cat2)}.
         </p>
         <p class="niceBox mainClr3">
             PREGUNTA: <br/> "${e.question}"
@@ -1057,8 +938,6 @@ showRemoveQuestBtn.addEventListener("click",()=>{
 
 
 });
-
-
 catalogPageBtn.addEventListener("click",showCatalog);
 catalogToSetQuestPageBtn.addEventListener("click", ()=>{
     newResaltedMsg("se presiono el btn para ir a crear un nuevo quiz");
@@ -1096,26 +975,20 @@ catalogRemoveConfirmBtn.addEventListener("click",()=>{
 
 homeBtn.addEventListener("click", home);
 
-
 function fillAsignSelectInput(input) {
 
     input.innerHTML = `
-    <option value="">Random</option>
-`;
+    <option value="">Random</option>`;
 
     for (let i = 0; i < asignatureList.length; i++) {
         const element = asignatureList[i];
-        console.log(element);
     
-        input.innerHTML += `<option value="${asignatureList[i]}">${completeAsignatureName(asignatureList[i])}</option>`;
-        
+        input.innerHTML += `<option value="${element[0]}">${element[1]}</option>`;
     }
 
 }
 fillAsignSelectInput(cat1FilterInput)
 fillAsignSelectInput(editCat1Input)
 fillAsignSelectInput(cat1Input)
-
-//completeAsignatureName(asignatureList[n])
 
 openWelcomePage();
