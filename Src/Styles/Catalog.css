@@ -1,0 +1,116 @@
+
+/*QUIZ CATALOG STYLES*/
+
+.questionBox{
+    background-color: var(--main-clr-2);
+    border-radius: 7px;
+    margin: 10px 0 10px 0;
+    padding: 0 0 15px 0;
+
+    text-align: left;
+}
+.questionBox > .headBox{
+    display: flex;
+    height: 30px;
+    font-size: 25px;
+}
+
+
+
+.questionBox > .headBox > .questionNumber{
+    background-color: var(--main-clr);
+    width: min-content;
+
+    text-align: center;
+    padding: 0 5px 0 5px;
+    border-radius: 0;
+
+}
+.questionBox > .headBox > .asign{
+    background: var(--nice-combination);
+    color: var(--main-clr);
+
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+
+    border-radius: 0 7px 0 0;
+
+}
+
+
+
+.questionBox > .questionBtnsBox{
+    height: 30px;
+    display:flex;
+    border-bottom: white solid 2px;
+}
+.questionBox > .questionBtnsBox > button{
+    border-radius: 0;
+    border: 0;
+    min-width: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-clr-2);
+    margin: 0;
+}
+.questionBox > .questionBtnsBox > button:hover{
+    background-color: var(--main-clr-4);
+}
+
+
+
+.questionBox > .question{
+    font-size: 20px;
+    padding: 5px 5px 0 5px;
+}
+
+
+.questionBox > .details{
+    padding: 0 5px 5px 5px;
+    display: none;
+    
+}
+
+.questionBox > .details > *{
+    padding: 5px 0 5px 5px;
+    border-radius: 3px;
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+.questionBox > .details > .catsBox{
+    display: flex;
+}
+
+.questionBox > .details > .catsBox > *{
+    background-color: var(--main-clr-3);
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.questionBox > .details > .completeQuestionBox,
+.questionBox > .details > .correctAnswerBox,
+.questionBox > .details > .explanationBox,
+.questionBox > .details > .incorrectAnswersBox{
+    background-color: var(--main-clr-3);
+}
+
+.questionBox > .details > .completeQuestionBox > .title,
+.questionBox > .details > .correctAnswerBox > .title,
+.questionBox > .details > .explanationBox > .title,
+.questionBox > .details > .incorrectAnswersBox > .title{
+    font-size: 13px;
+}
+
+.questionBox > .details > .incorrectAnswersBox > .content > p{
+    background-color: var(--main-clr-2);
+    border-radius: 3px;
+
+    padding: 0 7px 0 7px;
+    margin: 5px 5px 0 0;
+}

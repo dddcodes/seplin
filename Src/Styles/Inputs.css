@@ -1,0 +1,48 @@
+/*inputs*/
+
+
+
+select{
+    background-color: var(--main-clr-2);
+
+    font-size: 17px;
+
+    width: 90%;
+    max-width: 900px;
+
+    height: 60px;
+    border: none;
+
+    padding: 5px;
+}
+
+select option{
+    background-color: var(--main-clr-2);
+    color: var(--clr);
+    border: none;
+}
+
+select:hover{
+    background-color: var(--main-clr-2);
+}
+
+
+input,textarea{
+    background-color: var(--main-clr-3);
+    height: 22px;
+    padding: 5px;
+    font-size: 18px;
+
+    width: 80%;
+    max-width: 800px;
+    border: none;
+}
+
+textarea{
+    height: 100px;
+}
+
+input:hover,
+textarea:hover{
+    background-color: var(--main-clr-4);
+}

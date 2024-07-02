@@ -1,0 +1,139 @@
+
+/*BUTTONS (MAIN PAGE, BUTTONTAB, ETC)*/
+
+button{
+    background-color: var(--main-clr-2);
+    padding: 8px;
+    border: none;
+
+    height: 80px;
+    margin: 0 10px 0 10px;
+    min-width: 120px;
+
+    font-size: 16px;
+}
+
+#welcomePage button{
+    background-color: var(--main-clr-3);
+}
+
+button:hover{
+    background-color: var(--main-clr-3);
+}
+
+#welcomePage button:hover{
+    background-color: var(--main-clr-4);
+}
+
+
+.llamativeBtn{
+    color: var(--main-clr);
+    background-color: var(--llamative-clr);
+    border: var(--llamative-clr) solid 2px;
+
+}
+
+button:active,
+#welcomePage button:active{
+    color: var(--main-clr);
+    background-color: var(--clr);
+}
+
+.llamativeBtn:hover{
+    background-color: var(--main-clr);
+    color: var(--llamative-clr);
+}
+
+.llamativeBtn:active{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+}
+
+
+/*estilos del menu de btns*/
+
+.btnsBox{
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-clr);
+
+    padding: 0 0 6px 0;
+
+    border-radius: 0;
+    border-top: 3px solid var(--clr);
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    z-index: 2;
+    position: fixed;
+    bottom: -10px;
+
+}
+
+.btnsBox > button{
+    display: none;
+}
+
+.miniBtn{
+    height: 30px;
+    min-width: 60px;
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.homeBtn{
+    width: 80px;
+    min-width: 0;
+
+    padding-top: 12px;
+    font-size: 30px;
+}
+
+.homeBtn ion-icon{
+    color: var(--clr);
+}
+
+.createQuestBtn{
+    background: var(--nice-combination);
+
+
+    min-width: 0;
+    width: 70px;
+    height: 70px;
+
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.createQuestBtn > ion-icon{
+    color: var(--alt-clr);
+    font-size: 40px;
+    margin-bottom: -1px;
+}
+
+.createQuestBtn:hover{
+    background: var(--clr);
+
+    transition: var(--universal-trans);
+}
+
+
+.generateQuestsBtn{
+    background-color: var(--clr);
+    color: var(--main-clr);
+    max-width: 150px;
+    border: white solid 2px;
+}
+
+.generateQuestsBtn:hover{
+    background-color: var(--main-clr);
+    color: white;
+
+}
