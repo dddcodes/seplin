@@ -79,20 +79,17 @@ function removeQuest(ubication){
     }
 };
 function removeConfirm(ubication){
-    const element = questList[ubication];
     appear(catalogRemoveConfirmBtn);
     
     //cambia de color la caja del quiz
-    const box = document.querySelector(`#quest${ubication}`);
-    const removeBtn = document.querySelector(`#deleteBtnQuest${ubication}`);
+    const questionDiv = document.querySelector(`#quest${ubication} > .question`);
 
     if(questsToRemove.includes(ubication)){
         //se elimina del array
         questsToRemove.splice(questsToRemove.indexOf(ubication),1);
         console.log(questsToRemove);
 
-        box.style.backgroundColor = "var(--main-clr-2)";
-        removeBtn.style.backgroundColor = "var(--main-clr-3)";
+        questionDiv.style.backgroundColor = "var(--main-clr)";
 
         if(questsToRemove.length === 0){
             disappear(catalogRemoveConfirmBtn)
@@ -103,8 +100,7 @@ function removeConfirm(ubication){
         questsToRemove.push(ubication);
         console.log(questsToRemove);
 
-        box.style.backgroundColor = "var(--red)";
-        removeBtn.style.backgroundColor = "var(--main-clr-4)";
+        questionDiv.style.backgroundColor = "var(--red)";
     }
 
 };
@@ -359,24 +355,30 @@ function editFilters(newCat1, newCat2){
 let selectedChoiceNumber = 0;
 let selectedAnswer = undefined;
 let pastSelectedAnswer = undefined;
-function selectAnswer(choiceNumber) {
-    if(pastSelectedAnswer){
-        pastSelectedAnswer.style.backgroundColor = "var(--alt-clr)";
-        pastSelectedAnswer.style.color = "var(--clr)";
+function btnToNaturalStyle(btn){
+    if(btn){
+        btn.style.backgroundColor = "var(--main-clr)";
+        btn.style.color = "var(--clr)";
+        btn.style.borderColor = "var(--main-clr-2)";
+    } else{
+        console.log("NO EXISTE UNA RESPUESTE SELECCIONADA")
     }
+}
+function selectAnswer(choiceNumber) {
+
+    btnToNaturalStyle(pastSelectedAnswer)
+
     pastSelectedAnswer = selectedAnswer;
     selectedAnswer = document.querySelector(`#choice${choiceNumber}`);
+
     selectedChoiceNumber = choiceNumber;
     console.log(selectedAnswer.value);
 
-    if(pastSelectedAnswer){
-        pastSelectedAnswer.style.backgroundColor = "var(--main-clr)";
-        pastSelectedAnswer.style.color = "var(--clr)";
-    }
-
+    btnToNaturalStyle(pastSelectedAnswer)
 
     document.querySelector(`#answerButtons > #choice${choiceNumber}`).style.backgroundColor = "var(--clr)";
     document.querySelector(`#answerButtons > #choice${choiceNumber}`).style.color = "var(--alt-clr)";
+    document.querySelector(`#answerButtons > #choice${choiceNumber}`).style.borderColor = "var(--clr)";
     
 }
 /*[c] funcion para mostrar una nueva quest*/
@@ -471,7 +473,7 @@ function startQuest(){
             possibleAnswerArray.push(item);
             posibleAnswerN++;
             answersHTML += 
-            `<button class="btn" id="choice${posibleAnswerN}" value="${item}" onclick="selectAnswer(${posibleAnswerN})">${posibleAnswerN} - ${item}</button>`;
+            `<button class="btn choice" id="choice${posibleAnswerN}" value="${item}" onclick="selectAnswer(${posibleAnswerN})">${posibleAnswerN} - ${item}</button>`;
         }
         
     }
@@ -559,7 +561,7 @@ showExBtn.addEventListener("click", ()=> {
 
     appear(answerRevelationBox);
     answerRevelationBox.innerHTML = `
-        <p class="simpleBox">EXPLICACIÓN: <br/> ${questList[actualQuestN].ex || "No escribiste una para este quiz :/"}</p>`;
+        <p class="simpleBox llamativeBorder"><strong>EXPLICACIÓN:</strong> <br/> ${questList[actualQuestN].ex || "No escribiste una para este quiz :/"}</p>`;
 
 });
 
@@ -603,6 +605,8 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     appear(editFilterBtn);
 
     appear(answerRevelationBox);
+    clearHTML(answerRevelationBox);
+    btnToNaturalStyle(selectedAnswer);
 
     const n = actualQuestN;
     const quest = questList[n];
@@ -616,7 +620,7 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     }
     function ex(){ 
         if(quest.ex != ""){
-            showReveal("",`Explicación: <br /> ${quest.ex}`)
+            showReveal("llamativeBorder",`<strong>EXPLICACIÓN:</strong> <br /> ${quest.ex}`)
         }  
     }
 
@@ -631,15 +635,15 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
         switch (selectedAnswer.value) {
 
         case correctAnswer: //si R correcta
-            showReveal("successBorder", `EXCELENTE!`);
+            showReveal("successBorder", `<strong>EXCELENTE!</strong>`);
             ex();
             isCorrectAnswer = true;
             break;
 
         default: //si R es incorrecta
             console.log("seleccionaste: " + selectedChoiceNumber);
-            showReveal("failBorder", `INCORRECTA, SIGUE INTENTANDO<br/> 
-                Respuesta correcta: '${correctAnswer}'`);
+            showReveal("failBorder", `<strong>INCORRECTA, SIGUE INTENTANDO</strong><br/> 
+                Respuesta correcta: '<em>${correctAnswer}</em>'`);
             ex();
             break;
 
@@ -662,24 +666,24 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
 
     let color = (isCorrectAnswer)? "var(--green)" : "var(--red)";
     color = (correctAnswer)? color : "orange";
-    selectedAnswer.style.background = color;
+    if (selectedAnswer) {
+        selectedAnswer.style.background = color;
+        selectedAnswer.style.borderColor = color;
+    };
     
-    switch (correctAnswer) {
-        case document.querySelector(`#choice1`).value:
-            document.querySelector(`#choice1`).style.background = "var(--green)"
-            break;
-        case document.querySelector(`#choice2`).value:
-            document.querySelector(`#choice2`).style.background = "var(--green)"
-            break;
-        case document.querySelector(`#choice3`).value:
-            document.querySelector(`#choice3`).style.background = "var(--green)"
-            break;
-        case document.querySelector(`#choice4`).value:
-            document.querySelector(`#choice4`).style.background = "var(--green)"
-            break;
-        default:
-            break;
+
+    for(let i = 0; document.querySelectorAll(".choice")[i];i++){
+
+        document.querySelectorAll(".choice")[i].disabled = true;
+
+        const e = document.querySelectorAll(`.choice`)[i];
+        if (e.value === correctAnswer) {
+            e.style.background = "var(--green)";
+            e.style.borderColor = "var(--green)";
+            
+        }
     }
+
 });
 
 
