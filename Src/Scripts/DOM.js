@@ -30,6 +30,7 @@ const editFilterBtn = document.querySelector("#editFilterBtn");
 
 const questSubmitBtn = document.querySelector("#questSubmitBtn"); //[c] el btn para contestar.
 const startQuestBtn = document.querySelector("#startQuestBtn");
+const nextQuestBtn = document.querySelector("#nextQuestBtn");
 const showExBtn = document.querySelector("#showExBtn");
 
 const setQuestPageBtn = document.querySelector("#setQuestPageBtn");

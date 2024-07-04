@@ -356,14 +356,35 @@ function editFilters(newCat1, newCat2){
     console.log(`--------------------------------------`);
 
 };
+let selectedChoiceNumber = 0;
+let selectedAnswer = undefined;
+let pastSelectedAnswer = undefined;
+function selectAnswer(choiceNumber) {
+    if(pastSelectedAnswer){
+        pastSelectedAnswer.style.backgroundColor = "var(--alt-clr)";
+        pastSelectedAnswer.style.color = "var(--clr)";
+    }
+    pastSelectedAnswer = selectedAnswer;
+    selectedAnswer = document.querySelector(`#choice${choiceNumber}`);
+    selectedChoiceNumber = choiceNumber;
+    console.log(selectedAnswer.value);
+
+    if(pastSelectedAnswer){
+        pastSelectedAnswer.style.backgroundColor = "var(--main-clr)";
+        pastSelectedAnswer.style.color = "var(--clr)";
+    }
+
+
+    document.querySelector(`#answerButtons > #choice${choiceNumber}`).style.backgroundColor = "var(--clr)";
+    document.querySelector(`#answerButtons > #choice${choiceNumber}`).style.color = "var(--alt-clr)";
+    
+}
 /*[c] funcion para mostrar una nueva quest*/
 function startQuest(){
 
-    clrConsoleText(`-------------------------------------`, 'black', 'white');
-    clrConsoleText(`startQuest() iniciada`, 'white', 'blue');
+    clrConsoleText(`startQuest()`, 'white', 'blue');
     
-    clearPageArea();
-    clearBtnsBar();
+    clearAll()
     
     clearHTML(answerRevelationBox);
     clearHTML(questBox);
@@ -437,20 +458,20 @@ function startQuest(){
     const quest = questList[n];
     actualQuestN = n;
         
-    success(`--> MOSTRANDO AHORA LA QUEST NO: ${n}`);
+    success(`--> MOSTRANDO AHORA EL QUIZ NO: ${n}`);
 
 
     //[c] LOOP PARA ELEGIR LAS MULTIPLES RESPUESTAS DEL QUEST
     let possibleAnswerArray = []
-    let answersHtml = ``;
+    let answersHTML = ``;
     let posibleAnswerN = 0;
     function addAnswerOption(item){
         
         if (item) {
             possibleAnswerArray.push(item);
             posibleAnswerN++;
-            answersHtml += 
-            `<option value="${item}">${posibleAnswerN} - ${item}</option>`;
+            answersHTML += 
+            `<button class="btn" id="choice${posibleAnswerN}" value="${item}" onclick="selectAnswer(${posibleAnswerN})">${posibleAnswerN} - ${item}</button>`;
         }
         
     }
@@ -470,33 +491,29 @@ function startQuest(){
         if(i >= 200) break; //para evitar loops infinitos que congelan el dispositivo en caso de fallas.
         
     }
-    console.log(`Answers: ${possibleAnswerArray}`);
+    console.log(`Answers: ${possibleAnswerArray} ... y el answersHTML: ${answersHTML}`);
 
-
-    msg = (msg)? `<p class="niceBox"> ${msg} </p>` : "";
-    
-    //[c] mostramos la pregunta, su input y el btn de envio.
     questBox.innerHTML +=`
-        <div class="questEpicBox">
-
-            ${msg}
-            <p class="niceBox" >
-                ${completeAsignatureName(quest.cat1) || "<em>sin materia</em>"} - ${numberToMonth(quest.cat2) || "<em>sin mes</em>"}
+        <p class="quizMsgBox"> ${msg} </p>
+        <div class="quizBox">
+            <p class="details">
+                ${completeAsignatureName(quest.cat1) || "<em>sin materia</em>"} 
+                - ${numberToMonth(quest.cat2) || "<em>sin mes</em>"}
             </p>
 
-            <p class="simpleBox llamativeClr">${quest.question || "<em>PREGUNTA INDEFINIDA</em>"}</p>
+            <hr>
 
-            <select id="questInput">
-                <option value="">Selecciona una respuesta</option>
-                ${answersHtml}
-            </select>
+            <div class="subBox">
+                
+                <p class="question">${quest.question || "<em>PREGUNTA INDEFINIDA</em>"}</p>
+                <div id="answerButtons">
+                    ${answersHTML}
+                </div>
+            </div>
+        </div>`;
 
-        </div>
-        `;
-
-    const questInput = document.querySelector("#questInput"); //[c] el input para la respuesta.
     
-    clrConsoleText(`-------------------------------------`, 'black', 'white');
+    
 };
 function clearBtnsBar(){
     for (let i = 0; i < btnsBarBtns.length; i++) {
@@ -537,6 +554,7 @@ let mainFilters = {
 
 /*[c] EVENT LISTENERS */
 startQuestBtn.addEventListener("click",startQuest); //empezar un quest...
+nextQuestBtn.addEventListener("click",startQuest);
 showExBtn.addEventListener("click", ()=> {
 
     appear(answerRevelationBox);
@@ -581,7 +599,7 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
 
     clearBtnsBar();
 
-    appear(startQuestBtn);
+    appear(nextQuestBtn);
     appear(editFilterBtn);
 
     appear(answerRevelationBox);
@@ -589,7 +607,6 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     const n = actualQuestN;
     const quest = questList[n];
 
-    const selectedAnswer = questInput.value;
     const correctAnswer = quest.answer;
 
     let isCorrectAnswer = false;
@@ -599,7 +616,12 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     }
     function ex(){ showReveal("",`Explicación: <br /> ${quest.ex}`)  }
 
-    switch (selectedAnswer) {
+    if (!selectedAnswer) {
+        console.log("NOOOOu")
+        showReveal("fail", "NO RESPONDISTE :(");
+        ex()
+    } else{
+        switch (selectedAnswer.value) {
 
         case correctAnswer: //si R correcta
             showReveal("success", `EXCELENTE!`);
@@ -607,18 +629,17 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
             isCorrectAnswer = true;
             break;
 
-        case "": //si no hay R seleccionada
-            showReveal("fail", "NO RESPONDISTE :(");
-            ex()
-            break;
-
         default: //si R es incorrecta
-            showReveal("fail", `INCORRECTA, SIGUE INTENTANDO!<br/> 
+            console.log("seleccionaste: " + selectedChoiceNumber);
+            showReveal("fail", `INCORRECTA, SIGUE INTENTANDO<br/> 
                 Respuesta correcta: '${correctAnswer}'`);
             ex();
             break;
 
     }
+    }
+
+    
 
     if(!correctAnswer){
 
@@ -634,7 +655,24 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
 
     let color = (isCorrectAnswer)? "var(--green)" : "var(--red)";
     color = (correctAnswer)? color : "orange";
-    questInput.style.background = color;
+    selectedAnswer.style.background = color;
+    
+    switch (correctAnswer) {
+        case document.querySelector(`#choice1`).value:
+            document.querySelector(`#choice1`).style.background = "var(--green)"
+            break;
+        case document.querySelector(`#choice2`).value:
+            document.querySelector(`#choice2`).style.background = "var(--green)"
+            break;
+        case document.querySelector(`#choice3`).value:
+            document.querySelector(`#choice3`).style.background = "var(--green)"
+            break;
+        case document.querySelector(`#choice4`).value:
+            document.querySelector(`#choice4`).style.background = "var(--green)"
+            break;
+        default:
+            break;
+    }
 });
 
 
@@ -805,9 +843,6 @@ function fillAsignSelectInput(input) {
     }
 
 }
-
-
-
 
 fillAsignSelectInput(cat1FilterInput)
 fillAsignSelectInput(editCat1Input)
