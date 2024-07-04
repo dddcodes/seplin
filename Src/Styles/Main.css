@@ -14,19 +14,19 @@
 
     --alt-clr: var(--main-clr); /*para las letras, bordes, :active, etc*/
     --clr: white;
-    --green: #549766;
-    --red: #9b6767;
+    --green: #38c35d;
+    --red: #ea5858;
     --clr-2: #9d7e79;  
     --clr-3: #ccac95;
     --clr-4: #748b83;
     --clr-5: #5b756c;
 
-    --llamative-clr: #EDE152; /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
+    --llamative-clr: rgba(255,241,0,1) ; /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
     --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
     --universal-border-rad: 4px;
 
     --nice-combination: linear-gradient(90deg, rgba(255,241,0,1) 0%, rgba(209,152,2,1) 63%, rgb(255, 149, 0) 100%);
-    --nice-combination-2: linear-gradient(130deg, rgb(200, 194, 74) 0%, rgba(209,152,2,1) 10%, rgb(236, 66, 23) 100%);
+    --nice-combination-2: linear-gradient(130deg, rgba(255,241,0,1) 0%, rgba(209,152,2,1) 10%, rgb(236, 66, 23) 100%);
 }
 
 *{
@@ -58,7 +58,7 @@ body {
     justify-content: center;
     text-align: center;
 
-    padding-bottom: 70px;
+    padding-bottom: 150px;
 }
 
 
@@ -105,36 +105,12 @@ body {
     margin-top: 20px;
 }
 
-.questBox{
-    padding-top: 10px;
-    margin-bottom: 25px;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.questEpicBox *{
-    margin-bottom: 10px;
-}
-
-.questEpicBox select{
-    width:100%;
-    max-width: 900px;
-}
 
 .answerRevelationDiv{
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+    width: 100%;
 }
 
 .answerRevelationDiv *{
-    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -150,23 +126,34 @@ body {
 }
 
 .simpleBox{
-    width: 100%;
+    width: auto;
     max-width: 900px;
-    padding: 20px 0 20px 0;
+    padding: 20px 10px 20px 10px;
 
-    background-color: var(--main-clr-2);
+    border: var(--main-clr-2) solid 1px;
+
+
     border-radius: var(--universal-border-rad);
 
     justify-content: center;
     align-items: center;
 
 }
+
 .success{
     background-color: var(--green);
 }
 
 .fail{
     background-color: var(--red);
+}
+
+.succesBorder{
+    border-color: var(--green);
+}
+
+.failBorder{
+    border-color: var(--red);
 }
 
 .transparent{
