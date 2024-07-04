@@ -614,24 +614,31 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     function showReveal( type, text ){
         answerRevelationBox.innerHTML += `<p class="simpleBox ${type}">${text}</p>`
     }
-    function ex(){ showReveal("",`Explicación: <br /> ${quest.ex}`)  }
+    function ex(){ 
+        if(quest.ex != ""){
+            showReveal("",`Explicación: <br /> ${quest.ex}`)
+        }  
+    }
 
     if (!selectedAnswer) {
+
         console.log("NOOOOu")
-        showReveal("fail", "NO RESPONDISTE :(");
+        showReveal("failBorder", "NO RESPONDISTE :(");
         ex()
+
     } else{
+        
         switch (selectedAnswer.value) {
 
         case correctAnswer: //si R correcta
-            showReveal("success", `EXCELENTE!`);
+            showReveal("successBorder", `EXCELENTE!`);
             ex();
             isCorrectAnswer = true;
             break;
 
         default: //si R es incorrecta
             console.log("seleccionaste: " + selectedChoiceNumber);
-            showReveal("fail", `INCORRECTA, SIGUE INTENTANDO<br/> 
+            showReveal("failBorder", `INCORRECTA, SIGUE INTENTANDO<br/> 
                 Respuesta correcta: '${correctAnswer}'`);
             ex();
             break;
