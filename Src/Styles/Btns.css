@@ -2,9 +2,9 @@
 /*BUTTONS (MAIN PAGE, BUTTONTAB, ETC)*/
 
 button{
-    background-color: var(--main-clr-2);
+    background-color: var(--main-clr);
+    border: 2px solid var(--main-clr-2);
     padding: 8px;
-    border: none;
 
     height: 80px;
     margin: 0 10px 0 10px;
@@ -13,17 +13,12 @@ button{
     font-size: 16px;
 }
 
-#welcomePage button{
-    background-color: var(--main-clr-3);
+#welcomePage > .buttonDiv{
+    border: 1px solid var(--main-clr-2);
+    background-color: var(--main-clr); 
+    padding: 20px;
 }
 
-button:hover{
-    background-color: var(--main-clr-3);
-}
-
-#welcomePage button:hover{
-    background-color: var(--main-clr-4);
-}
 
 
 .llamativeBtn{
@@ -33,15 +28,10 @@ button:hover{
 
 }
 
-button:active,
-#welcomePage button:active{
-    color: var(--main-clr);
-    background-color: var(--clr);
-}
-
 .llamativeBtn:hover{
     background-color: var(--main-clr);
     color: var(--llamative-clr);
+    border-color: var(--llamative-clr);
 }
 
 .llamativeBtn:active{
@@ -60,7 +50,7 @@ button:active,
     padding: 0 0 6px 0;
 
     border-radius: 0;
-    border-top: 3px solid var(--clr);
+    border-top: 2px solid var(--main-clr-2);
 
     justify-content: center;
     align-items: center;
@@ -71,9 +61,18 @@ button:active,
     bottom: -10px;
 
 }
-
 .btnsBox > button{
     display: none;
+}
+
+
+button:hover{
+    background-color: var(--main-clr);
+    border-color: var(--main-clr-3);
+}
+
+button:active{
+    border-color: white;
 }
 
 .miniBtn{
@@ -93,12 +92,13 @@ button:active,
 }
 
 .homeBtn ion-icon{
-    color: var(--clr);
+    color: var(--main-clr-4);
 }
 
 .createQuestBtn{
-    background: var(--nice-combination);
+    border: 2px solid var(--main-clr-2);
 
+    background-color: var(--main-clr);
 
     min-width: 0;
     width: 70px;
@@ -113,17 +113,20 @@ button:active,
 }
 
 .createQuestBtn > ion-icon{
-    color: var(--alt-clr);
+    color: var(--main-clr-4 );
     font-size: 40px;
-    margin-bottom: -1px;
+    margin-bottom: -2px;
 }
 
 .createQuestBtn:hover{
-    background: var(--clr);
-
-    transition: var(--universal-trans);
+    background: var(--main-clr-2);
+    border-color: var(--main-clr-2);
 }
 
+.createQuestBtn:active{
+    background: var(--main-clr-3);
+    border-color: var(--main-clr-3);
+}
 
 .generateQuestsBtn{
     background-color: var(--clr);

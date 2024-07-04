@@ -26,7 +26,6 @@
     --universal-border-rad: 4px;
 
     --nice-combination: linear-gradient(90deg, rgba(255,241,0,1) 0%, rgba(209,152,2,1) 63%, rgb(255, 149, 0) 100%);
-    --nice-combination-2: linear-gradient(130deg, rgba(255,241,0,1) 0%, rgba(209,152,2,1) 10%, rgb(236, 66, 23) 100%);
 }
 
 *{
@@ -120,9 +119,9 @@ body {
 
 
 .niceBox{
-    padding: 3px;
-    background-color: var(--main-clr-2);
+    padding: 5px;
     border-radius: var(--universal-border-rad);
+    border: var(--main-clr-2) solid 1px;
 }
 
 .simpleBox{
@@ -131,6 +130,7 @@ body {
     padding: 20px 10px 20px 10px;
 
     border: var(--main-clr-2) solid 1px;
+
 
 
     border-radius: var(--universal-border-rad);
@@ -142,13 +142,15 @@ body {
 
 .success{
     background-color: var(--green);
+    border-color: var(--green);
 }
 
 .fail{
     background-color: var(--red);
+    border-color: var(--red);
 }
 
-.succesBorder{
+.successBorder{
     border-color: var(--green);
 }
 
@@ -156,8 +158,13 @@ body {
     border-color: var(--red);
 }
 
+.llamativeBorder{
+    border-color: var(--llamative-clr);
+}
+
 .transparent{
     background: none;
+    border-color: none;
 }
 
 .square{
@@ -184,9 +191,7 @@ body {
     background-color: var(--main-clr);
     color: var(--llamative-clr);
 }
-.mainClr3{
-    background-color: var(--main-clr-3);
-}
+
 
 
 
@@ -199,26 +204,16 @@ body {
 }
 
 .simpleBox img:hover{
-    outline: var(--clr) solid 5px;
+    outline: var(--clr) solid 2px;
     background: var(--clr);
 }
 
-#setQuestPage > div.simpleBox{
-    background: none;
-    margin: 0;
 
-}
-
-#setQuestPage > div.simpleBox > h3{
+.simpleBox > h3{
     font-size: 17px;
     text-align: left;
     padding: 0 10%;
 
-}
-
-#setQuestPage > div.simpleBox > input ,
-#setQuestPage > div.simpleBox > textarea {
-    background-color: var(--main-clr-2);
 }
 
 

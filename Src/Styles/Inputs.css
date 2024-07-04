@@ -3,46 +3,60 @@
 
 
 select{
-    background-color: var(--main-clr-2);
+    background-color: var(--main-clr);
+    border:var(--main-clr-2) solid 2px;
 
     font-size: 17px;
 
     width: 90%;
     max-width: 900px;
 
-    height: 60px;
-    border: none;
-
+    height: 40px;
     padding: 5px;
 }
 
 select option{
-    background-color: var(--main-clr-2);
+    background-color: var(--main-clr);
     color: var(--clr);
-    border: none;
 }
 
 select:hover{
-    background-color: var(--main-clr-2);
+    border-color: var(--main-clr-3);
+}
+
+select:focus{
+    border-color: white;
 }
 
 
 input,textarea{
-    background-color: var(--main-clr-3);
+    background-color: var(--main-clr);
+    border: var(--main-clr-2) solid 2px;
     height: 22px;
     padding: 5px;
     font-size: 18px;
 
     width: 80%;
     max-width: 800px;
-    border: none;
 }
+
+input:hover,
+textarea:hover{
+    border-color: var(--main-clr-3);
+}
+
+input:focus,
+textarea:focus{
+    border-color: white;
+}
+
 
 textarea{
     height: 100px;
 }
 
-input:hover,
-textarea:hover{
-    background-color: var(--main-clr-4);
+#setQuestPage > .simpleBox,
+#editQuestPage > .simpleBox{
+    border-color: var(--main-clr);
+    padding: 10px;
 }

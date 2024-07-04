@@ -66,6 +66,10 @@
 }
 
 .quizBox > .subBox > #answerButtons > .btn:disabled{
-    border-color: var(--red);
     cursor: no-drop;
+}
+
+.quizBox > .subBox > #answerButtons > .btn[disabled]{
+    background-color: var(--main-clr);
+    border-color: var(--main-clr-2);
 }
