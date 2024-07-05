@@ -1,5 +1,4 @@
 
-
 /*[c] FUNCIONES */
 let defaultQuests = [];
 function setQuest(question = "Question", answer ="Answer", 
@@ -348,7 +347,7 @@ function editFilters(newCat1, newCat2){
 
     clrConsoleText(`FILTROS EDITADOS EXITOSAMENTE!`, 'black', 'white');
     clrConsoleText(`cat1(materia) = ${mainFilters.cat1}`, 'black', 'aqua');
-    clrConsoleText(`cat2((mes)) = ${mainFilters.cat2}`, 'black', 'aqua');
+    clrConsoleText(`cat2(parcial) = ${mainFilters.cat2}`, 'black', 'aqua');
     console.log(`--------------------------------------`);
 
 };
@@ -500,7 +499,7 @@ function startQuest(){
         <div class="quizBox">
             <p class="details">
                 ${completeAsignatureName(quest.cat1) || "<em>sin materia</em>"} 
-                - ${numberToMonth(quest.cat2) || "<em>sin mes</em>"}
+                - ${numberToMonth(quest.cat2) || "<em>sin parcial</em>"}
             </p>
 
             <hr>
@@ -509,7 +508,10 @@ function startQuest(){
                 
                 <p class="question">${quest.question || "<em>PREGUNTA INDEFINIDA</em>"}</p>
                 <div id="answerButtons">
-                    ${answersHTML}
+                    ${(answersHTML)? 
+                        answersHTML: 
+                        `<p class="simpleBox" style="border-color: var(--blue);">UH OH No encontre ninguna opcion</p>`
+                    }
                 </div>
             </div>
         </div>`;
@@ -550,8 +552,8 @@ let his = [];
 let answersPerQuest = 3;
 let actualQuestN;
 let mainFilters = {
-    cat1: undefined, // la materia.
-    cat2: undefined // el mes.
+    cat1: undefined, // MATERIA
+    cat2: undefined // PARCIAL
 }
 
 /*[c] EVENT LISTENERS */
@@ -656,8 +658,8 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
 
         answerRevelationBox.innerHTML = `
         <hr style='margin-bottom: 25px' />
-        <p class="simpleBox" style="background: orange;">
-            UH OH alparecer no hay respuesta correcta
+        <p class="simpleBox" style="border-color: var(--blue);">
+            UH OH Alparecer no hay respuesta correcta
             <br/>
             <img src="./what.gif">
         </p>`

@@ -8,7 +8,7 @@ function setRandomNumber(min = 4, max = 7){
     return num
 };
 function numberToMonth(number){
-    const monthList = ["Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre","Enero", "Febrero","Marzo", "Abril", "Mayo", "Junio", "Julio", ];
+    const monthList = ["Parcial I", "Parcial II", "Parcial III"];
     let month = monthList[number];
     return month;
 
