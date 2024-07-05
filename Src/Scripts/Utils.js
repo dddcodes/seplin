@@ -3,22 +3,12 @@
 /*UTILIES*/
 
 
-function setRandomNumber(min = 4, max = 7){         
-    let num = Math.floor(Math.random() * ( max - min) ) + min;
-    return num
+function setRandomNumber(min = 1, max = 10){         
+    return Math.floor(Math.random() * ( max - min) ) + min
 };
-function numberToMonth(number){
-    const monthList = ["Parcial I", "Parcial II", "Parcial III"];
-    let month = monthList[number];
-    return month;
-
-};
-
 function REFRESH(){
     window.scrollTo(0, 0);
-    clearBtnsBar();
-    clearPageArea();
-
+    clearAll()
     openWelcomePage();
 }
 
@@ -56,7 +46,6 @@ function saveQuestsData(){
     localStorage.setItem("quests", JSON.stringify(questList));
 };
 function LS_createItem(itemName, creationCallback = ()=>{console.log("[LS] sin callback de creacion")}){
-    console.log("LS_createItem()");
     if(!localStorage.getItem(itemName)){
 
         localStorage.setItem(itemName, "[]");

@@ -262,7 +262,7 @@ function generateQuizes(){
 
                 <div class="catsBox">
                     <p class="asign">${completeAsignatureName(element.cat1) || "<em>SIN MATERIA</em>"}</p>
-                    <p class="month">${numberToMonth(element.cat2) || "<em>SIN MES</em>"}</p>
+                    <p class="month">${numberToPartial(element.cat2) || "<em>SIN MES</em>"}</p>
                 </div>
 
                 <div class="completeQuestionBox">
@@ -386,12 +386,13 @@ function startQuest(){
     clrConsoleText(`startQuest()`, 'white', 'blue');
     
     clearAll()
-    
     clearHTML(answerRevelationBox);
     clearHTML(questBox);
+
     appear(questSubmitBtn);
     appear(showExBtn);
     appear(questBox);
+    appear(editQuestFloatBtn);
 
     let i = 0;
     let endLoop = false;
@@ -499,7 +500,7 @@ function startQuest(){
         <div class="quizBox">
             <p class="details">
                 ${completeAsignatureName(quest.cat1) || "<em>sin materia</em>"} 
-                - ${numberToMonth(quest.cat2) || "<em>sin parcial</em>"}
+                - ${numberToPartial(quest.cat2) || "<em>sin parcial</em>"}
             </p>
 
             <hr>
@@ -534,6 +535,7 @@ function clearPageArea(){
         const element = pageContent[i];
         disappear(element);
     }
+    disappear(editQuestFloatBtn)
     window.scrollTo(0, 0);
     console.log("se ha limmpiado la pagina");
 }
@@ -671,6 +673,7 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
     if (selectedAnswer) {
         selectedAnswer.style.background = color;
         selectedAnswer.style.borderColor = color;
+        selectedAnswer.style.color = "var(--main-clr)";
     };
     
 
@@ -682,6 +685,7 @@ questSubmitBtn.addEventListener("click", () => { //[c] cuando se conteste un que
         if (e.value === correctAnswer) {
             e.style.background = "var(--green)";
             e.style.borderColor = "var(--green)";
+            e.style.color = "var(--main-clr)";
             
         }
     }
@@ -793,7 +797,7 @@ showRemoveQuestBtn.addEventListener("click",()=>{
 
         showRemoveQuestDiv.innerHTML = `
         <p class="niceBox mainClr3">
-            MATERIA: ${completeAsignatureName(e.cat1) || "indefinida"}. MES: ${numberToMonth(e.cat2)}.
+            MATERIA: ${completeAsignatureName(e.cat1) || "indefinida"}. MES: ${numberToPartial(e.cat2)}.
         </p>
         <p class="niceBox mainClr3">
             PREGUNTA: <br/> "${e.question}"
@@ -842,23 +846,8 @@ catalogRemoveConfirmBtn.addEventListener("click",()=>{
 
 });
 
+createQuestFloatBtn.addEventListener("click",openSetQuestPage)
+editQuestFloatBtn.addEventListener("click", () => openEditQuestPage(actualQuestN))
 homeBtn.addEventListener("click", home);
-
-function fillAsignSelectInput(input) {
-
-    input.innerHTML = `
-    <option value="">Random</option>`;
-
-    for (let i = 0; i < asignatureList.length; i++) {
-        const element = asignatureList[i];
-    
-        input.innerHTML += `<option value="${element[0]}">${element[1]}</option>`;
-    }
-
-}
-
-fillAsignSelectInput(cat1FilterInput)
-fillAsignSelectInput(editCat1Input)
-fillAsignSelectInput(cat1Input)
 
 openWelcomePage();

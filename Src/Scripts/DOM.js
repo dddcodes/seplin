@@ -52,6 +52,8 @@ const catalogRemoveConfirmBtn = document.querySelector("#catalogRemoveConfirmBtn
 const catalogCreateQuestBtn = document.querySelector("#createQuestBtn");
 
 const homeBtn = document.querySelector("#homeBtn");
+const editQuestBtn = document.querySelector(`#editQuestBtn`)
+const createQuestBtn = document.querySelector(`#createQuestBtn`)
 
 //inputs:
 const cat1FilterInput = document.querySelector("#cat1FilterInput");
