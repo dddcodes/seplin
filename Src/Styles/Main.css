@@ -7,7 +7,7 @@
 
 
 :root{
-    --main-clr: #1e1e1f ;
+    --main-clr: #151515 ;
     --main-clr-2: #313131;
     --main-clr-3: #525252;
     --main-clr-4: #817f7f;
@@ -20,6 +20,7 @@
     --clr-3: #ccac95;
     --clr-4: #748b83;
     --clr-5: #5b756c;
+    --blue: rgb(55, 160, 246);
 
     --llamative-clr: rgba(255,241,0,1) ; /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
     --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
