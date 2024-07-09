@@ -251,19 +251,17 @@ function generateQuizes(){
                 </button>   
 
             </div>
+            <div class="partialBox">
+                    ${numberToPartial(element.cat2) || "<em>SIN MES</em>"}
+            </div>
 
             <div class="question">
                 ${question || "<em>PREGUNTA INDEFINIDA</em>"}
             </div>
 
-            
 
             <div class="details" id="quest${i}detailsBox">
 
-                <div class="catsBox">
-                    <p class="asign">${completeAsignatureName(element.cat1) || "<em>SIN MATERIA</em>"}</p>
-                    <p class="month">${numberToPartial(element.cat2) || "<em>SIN MES</em>"}</p>
-                </div>
 
                 <div class="completeQuestionBox">
                     <p class="title">PREGUNTA</p>
