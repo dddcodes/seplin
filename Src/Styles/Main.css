@@ -223,8 +223,31 @@ p a{
     color: var(--llamative-clr);
 }
 
-
 .main-clr{
     background-color: var(--main-clr);
     color: var(--clr);
+}
+
+
+
+
+
+#welcomePage > .menuBtnsBox{
+    padding: 10px;
+
+}
+
+#welcomePage > .menuBtnsBox > .menuBtn{
+
+    width: 40% ;
+    max-width: 350px;
+    height:  130px;
+    padding: 0;
+
+}
+
+#welcomePage > .menuBtnsBox > .menuBtn:nth-child(n + 3){
+    font-size: 13px;
+    height: 85px;
+    margin-top: 10px;
 }

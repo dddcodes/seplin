@@ -74,11 +74,13 @@
 
 
 
-.questionBox > .question{
+.questionBox > .question,
+.questionBox > .partialBox{
     font-size: 20px;
     color: var(--llamative-clr);
-    padding: 10px 5px 10px;
+    padding: 5px;
     background-color: var(--main-clr);
+
 }
 
 
@@ -91,24 +93,16 @@
     border-radius: 3px;
     font-size: 18px;
 
+    margin-top:  2px;
+}
+
+.questionBox > .partialBox{
     margin-bottom: 2px;
+    color: var(--blue);
 }
 
 
-.questionBox > .details > .catsBox{
-    display: flex;
-    justify-items: center;
-
-}
-
-.questionBox > .details > .catsBox > *{
-
-    border-radius: 3px;
-    width: 100%;
-    text-align: center;
-
-}
-
+.questionBox > .partialBox,
 .questionBox > .details > .completeQuestionBox,
 .questionBox > .details > .correctAnswerBox,
 .questionBox > .details > .explanationBox,
