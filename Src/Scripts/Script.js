@@ -42,7 +42,7 @@ LS_createItem('quests',()=>{
         como consecuencia del descontento popular hacia la dictadura de Porfirio Díaz, y 
         que derivaría en una guerra civil que transformaría radicalmente las estructuras 
         políticas y sociales del país.`,
-        false
+        true
     );
     setQuest("cúales son las propiedades EXTENSIVAS en Química?",
         "las que dependen del tamaño",
@@ -52,7 +52,7 @@ LS_createItem('quests',()=>{
         "qui",
         1,
         "Las propiedades Químicas de un objeto son las que dependen del tamaño de este mismo",
-        false
+        true
     );
 });
 let questList = localStorage.getItem("quests");
