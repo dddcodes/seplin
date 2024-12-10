@@ -13,6 +13,7 @@ let asignatureList = [
     ["cs", "Ciencias Sociales"],
     ["ac", "Acompañamiento Académico"],
     ["eco", "Economía"],
+    ["ecs", "Ecosistemas"],
     ["qui", "Química"]
 ];
 
