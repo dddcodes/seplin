@@ -30,7 +30,7 @@ function setQuest(question = "Question", answer ="Answer",
     console.log("NUEVO QUIZ CREADO");
 };
 LS_createItem('quests',()=>{
-    LS_createItem('quests', () => {
+
     setQuest(
         "Es el proceso por el cual, a partir de luz, CO2 y agua, una planta produce Oxigeno y glucosa:",
         "Fotosíntesis",
