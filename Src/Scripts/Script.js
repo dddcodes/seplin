@@ -30,30 +30,261 @@ function setQuest(question = "Question", answer ="Answer",
     console.log("NUEVO QUIZ CREADO");
 };
 LS_createItem('quests',()=>{
-    setQuest("En qué consistió la Revolución Mexicana ( 1910 - 1917 ) ?", 
-        "acabar la dictadura de Porfirio Díaz",
-        ["guerra internacional con USA",
-        "acabar con el dominio Español",
-        "independencia de Texas",
-        "invencion de maquinas industriales"],
-        "his",
-        1,
-        `La Revolución Mexicana fue un conflicto armado que inició en 1910, 
-        como consecuencia del descontento popular hacia la dictadura de Porfirio Díaz, y 
-        que derivaría en una guerra civil que transformaría radicalmente las estructuras 
-        políticas y sociales del país.`,
+    LS_createItem('quests', () => {
+    setQuest(
+        "Es el proceso por el cual, a partir de luz, CO2 y agua, una planta produce Oxigeno y glucosa:",
+        "Fotosíntesis",
+        ["Respiración celular", "ATP", "Nutrición Holozoica"],
+        "ecs",
+        2,
+        "La fotosíntesis es el proceso por el cual las plantas producen glucosa y oxígeno utilizando CO2, agua y luz.",
         true
     );
-    setQuest("cúales son las propiedades EXTENSIVAS en Química?",
-        "las que dependen del tamaño",
-        ["las que no dependen del tamaño",
-        "las que tienen baja fuerza intermolecular",
-        "las que son contables"],
-        "qui",
-        1,
-        "Las propiedades Químicas de un objeto son las que dependen del tamaño de este mismo",
+    setQuest(
+        "¿Cuál de los siguientes organelos lleva a cabo la digestión celular?",
+        "Lisosoma",
+        ["Mitocondria", "Membrana Plasmática", "Aparato de Golgi"],
+        "ecs",
+        2,
+        "Los lisosomas son organelos encargados de descomponer materiales en la célula.",
         true
     );
+    setQuest(
+        "Es la función de los ribosomas en la célula:",
+        "Llevan a cabo la síntesis de proteínas",
+        ["En ella se realiza el proceso de la fotosíntesis", "Contiene la información genética de la célula", "En este organelo se lleva a cabo la división celular"],
+        "ecs",
+        2,
+        "Los ribosomas son responsables de sintetizar proteínas en la célula.",
+        true
+    );
+    setQuest(
+        "En el proceso de respiración celular ¿cuáles son los productos?",
+        "CO2, H2O y ATP",
+        ["Glucosa y H2O", "Glucosa y O2", "O2 y ATP"],
+        "ecs",
+        2,
+        "La respiración celular produce CO2, agua y ATP, utilizando glucosa y oxígeno.",
+        true
+    );
+    setQuest(
+        "Es la principal función de las proteínas en el ser humano:",
+        "Son necesarias para el funcionamiento celular, el crecimiento y el desarrollo normales.",
+        ["Proporcionan energía, forman parte del tejido conectivo y nervioso", "Fortalecen músculos, piel y huesos, realizan la mayor parte del trabajo celular, creando nuevas células y reparando las dañadas", "Almacenan información genética, la cual será trasmitida de padres a hijos"],
+        "ecs",
+        2,
+        "Las proteínas son esenciales para el crecimiento, desarrollo y mantenimiento celular.",
+        true
+    );
+    setQuest(
+        "Es el tipo de fermentación en donde se produce etanol y dióxido de carbono como productos de desecho:",
+        "Alcohólica",
+        ["Acética", "Láctica", "Butírica"],
+        "ecs",
+        2,
+        "La fermentación alcohólica produce etanol y dióxido de carbono.",
+        true
+    );
+    setQuest(
+        "¿A qué tipo de factores corresponden los elementos del siguiente listado? 1) Flora 2) Fauna 3) Productores 4) Consumidores",
+        "Bióticos",
+        ["Físicos", "Químicos", "Abióticos"],
+        "ecs",
+        2,
+        "Los factores bióticos incluyen organismos vivos, como flora, fauna y consumidores.",
+        true
+    );
+    setQuest(
+        "Es el tipo de Bioma terrestre que se caracteriza por bajas temperaturas, suelos congelados y escasa vegetación.",
+        "Tundra",
+        ["Taiga", "Bosque húmedo", "Desierto polar"],
+        "ecs",
+        2,
+        "La tundra tiene suelos congelados y baja vegetación debido a las bajas temperaturas.",
+        true
+    );
+    setQuest(
+        "Bioma que se localiza al sur de Veracruz, parte de Oaxaca, Chiapas y Tabasco, en donde habitan el Jaguar y Mono araña, entre otros:",
+        "Bosque húmedo",
+        ["Bosque tropical", "Bosque Caducifolio", "Bosque de coníferas"],
+        "ecs",
+        2,
+        "El bosque húmedo tropical de México es hogar de especies como el jaguar y el mono araña.",
+        true
+    );
+    setQuest(
+        "Corresponde al último nivel de la red trófica terrestre formado por hongos y bacterias heterótrofas:",
+        "Descomponedores",
+        ["Productores", "Consumidores Primarios", "Consumidores secundarios"],
+        "ecs",
+        2,
+        "Los descomponedores como hongos y bacterias reciclan los nutrientes en los ecosistemas.",
+        true
+    );
+    setQuest(
+        "Tipo de biomasa producida por la naturaleza sin la intervención humana:",
+        "Natural",
+        ["Seca", "Residual húmeda", "Biocarburantes"],
+        "ecs",
+        2,
+        "La biomasa natural se genera sin intervención humana, como restos de plantas y animales.",
+        true
+    );
+    setQuest(
+        "Tipo de biomasa la cual se mide por la cantidad de carbono, componente primario de estos organismos y en una de sus clasificaciones están los artrópodos.",
+        "De animales",
+        ["De Plantas", "De Hongos", "De Virus"],
+        "ecs",
+        2,
+        "La biomasa animal incluye organismos como los artrópodos que son ricos en carbono.",
+        true
+    );
+    setQuest(
+        "Son las principales responsables de almacenar 450 Gt de carbono, es decir el 80% del total, son las productoras primarias de todo ecosistema normal.",
+        "Plantas",
+        ["Bacterias", "Arqueas", "Protistas"],
+        "ecs",
+        2,
+        "Las plantas almacenan la mayor parte del carbono en los ecosistemas.",
+        true
+    );
+    setQuest(
+        "Esta ley consiste en el paso de energía solo del 10% de un nivel trófico a otro en un ecosistema.",
+        "Del diezmo",
+        ["De la entropía", "De la conservación", "De la entalpía"],
+        "ecs",
+        2,
+        "La ley del 10% describe cómo la energía disminuye al pasar de un nivel trófico a otro.",
+        true
+    );
+    setQuest(
+        "Son factores que limitan la producción primaria y/o bruta.",
+        "Temperatura y humedad",
+        ["CO2 y Glucosa", "Oxígeno y Humedad", "Temperatura y Glucosa"],
+        "ecs",
+        2,
+        "La temperatura y la humedad son factores que influyen en la producción primaria.",
+        true
+    );
+    setQuest(
+        "Identifica qué característica de la población corresponde el siguiente texto: ‘Indica el número de nacimientos ocurridos en una población en un intervalo de tiempo’.",
+        "Tasa de natalidad",
+        ["Densidad", "Potencial biótico", "Distribución de edades"],
+        "ecs",
+        2,
+        "La tasa de natalidad mide los nacimientos en una población en un periodo determinado.",
+        true
+    );
+    setQuest(
+        "Lea con atención el siguiente texto, y responde la pregunta: ‘Estos factores detienen el incremento poblacional sin depender de la densidad, es decir, disminuyen la natalidad y aumentan la mortalidad. Se involucran factores abióticos tales como la precipitación pluvial, sequía e inundaciones. También incluye la destrucción de hábitats que el hombre produce, incluyendo el uso de plaguicidas’. ¿A qué tipo de factores se hace referencia?",
+        "Densoindependientes",
+        ["Densodependientes", "Extrínsecos", "Intrínsecos"],
+        "ecs",
+        2,
+        "Los factores densoindependientes no dependen de la densidad de la población y afectan la natalidad y mortalidad.",
+        true
+    );
+    setQuest(
+        "Lea con atención la siguiente información y selecciona la opción correcta que represente dos características del crecimiento poblacional. 1) Incremento del número de población. 2) Cambio climático. 3) Calidad y disponibilidad de los recursos naturales. 4) La suma entre el potencial biótico y la resistencia ambiental 5) Explotación de los recursos naturales. 6) Nivel tecnológico.",
+        "1,6",
+        ["3,5", "1,4", "2,4"],
+        "ecs",
+        2,
+        "El crecimiento poblacional se ve influenciado por la disponibilidad de recursos y el nivel tecnológico.",
+        true
+    );
+    setQuest(
+        "Lee con atención el siguiente enunciado: ‘Se produce un mayor aprovechamiento y el ecosistema se vuelve más complejo’. ¿A qué tendencia de sucesión ecológica corresponde?",
+        "Aumento de la biodiversidad",
+        ["Aumento progresivo de la biomasa", "Aumento de la producción primaria", "Aumento de los nichos ecológicos"],
+        "ecs",
+        2,
+        "En la sucesión ecológica, un ecosistema más maduro muestra un aumento en la biodiversidad.",
+        true
+    );
+    setQuest(
+        "Este tipo de regresión puede ocurrir a partir de la escorrentía o de la eliminación de desechos de sustancias químicas, o de fuentes de energía. ¿A qué regresión nos referimos?",
+        "Contaminación",
+        ["Cambio de uso de suelo", "Especies introducidas", "Explotación de recursos"],
+        "ecs",
+        2,
+        "La contaminación afecta negativamente a los ecosistemas al introducir sustancias químicas y energía.",
+        true
+    );
+    setQuest(
+        "Las características tales como: La energía solar es el motor principal que lo impulsa, mantiene un equilibrio natural, contribuye al transporte de nutrientes y mantiene la humedad esencial para preservar la vida en los ecosistemas, pertenecen al:",
+        "Ciclo del agua",
+        ["Ciclo del Carbono", "Ciclo del Nitrógeno", "Ciclo del Fosforo"],
+        "ecs",
+        2,
+        "El ciclo del agua es fundamental para mantener la humedad en los ecosistemas y apoyar la vida.",
+        true
+    );
+    setQuest(
+        "El ciclo del carbono comprende el intercambio rápido de carbono entre los organismos vivos y a través de los procesos geológicos a largo plazo, ¿cuál es la característica que lo identifica?",
+        "Participa en los procesos de fotosíntesis y respiración celular",
+        ["Es el elemento más abundante de la atmósfera con un porcentaje de 79%", "Se usa en fertilizantes", "Forma parte de los ciclos biogeoquímicos sedimentarios"],
+        "ecs",
+        2,
+        "El carbono es esencial para la vida y participa en los procesos de fotosíntesis y respiración celular.",
+        true
+    );
+    setQuest(
+        "Para que el nitrógeno pueda ser asimilado por las plantas este debe ser convertido primero en nitratos o nitritos que es la forma asimilable del nitrógeno para los seres vivos y este proceso es llevado a cabo por bacterias, ¿cuál es la característica que lo identifica?",
+        "Es asimilado por las plantas e incorporado a sus tejidos en forma de proteínas vegetales",
+        ["Participa en los procesos de fotosíntesis y respiración celular", "Forma parte de los ciclos biogeoquímicos sedimentarios", "Es el elemento menos abundante de la atmósfera"],
+        "ecs",
+        2,
+        "El nitrógeno debe ser fijado en formas asimilables como nitratos y nitritos para ser utilizado por las plantas.",
+        true
+    );
+    setQuest(
+        "El Fosforo es un nutriente esencial para los seres vivos, pero es el que se encuentra en menor cantidad; ¿cuál es la característica que lo identifica?",
+        "En la naturaleza es a menudo el nutriente limitante",
+        ["Es una parte fundamental de los aminoácidos", "Es un nutriente que forma parte de los ciclos biogeoquímicos gaseosos", "Es el elemento más abundante de la atmósfera con un porcentaje de 79%"],
+        "ecs",
+        2,
+        "El fósforo es esencial para la formación de ADN y ARN, y es a menudo el nutriente limitante en los ecosistemas.",
+        true
+    );
+    setQuest(
+        "Parte del azufre presente en los organismos vivos queda en los suelos cuando éstos mueren. La descomposición de la materia orgánica produce ácido sulfhídrico de mal olor. ¿Cuál es la característica que lo identifica?",
+        "Llega a la tierra con las lluvias en forma de sulfatos y sulfitos",
+        ["Forma amonio y nitratos", "Se convierte en piedra caliza", "Se obtiene como producto de la fotosíntesis"],
+        "ecs",
+        2,
+        "El azufre se encuentra en la atmósfera y el suelo, y llega a la tierra a través de las lluvias en forma de sulfatos.",
+        true
+    );
+    setQuest(
+        "Los beneficios como hábitats, calidad del aire y agua, regulación del clima y la polinización, son los que aportan los ecosistemas a los seres humanos para realizarse en todas sus facetas, ¿Cuáles son los servicios que proporcionan dichos beneficios?",
+        "Soporte, aprovisionamiento, regulación y cultural",
+        ["Soporte, logístico, regulación y cultural", "Soporte, regulación, aprovisionamiento y social", "Soporte, regulación, aprovisionamiento y económico"],
+        "ecs",
+        2,
+        "Los ecosistemas proporcionan beneficios esenciales como hábitats, purificación del aire y agua, y regulan el clima.",
+        true
+    );
+    setQuest(
+        "El desarrollo sustentable está enfocado únicamente en los recursos naturales y el medio ambiente y el desarrollo sostenible busca asegurar procesos saludables para satisfacer las necesidades sociales y económicas de los seres humanos mediante los objetivos globales que son:",
+        "Fin de la pobreza, salud y bienestar, igualdad de género y acción por el clima",
+        ["Religión, salud y bienestar, igualdad de género y acción por el clima", "Religión, educación de calidad, igualdad de género y acción por el clima", "Religión, salud y bienestar, igualdad de género y hambre cero"],
+        "ecs",
+        2,
+        "El desarrollo sostenible busca cumplir con objetivos globales como erradicar la pobreza y promover la salud y el bienestar.",
+        true
+    );
+    setQuest(
+        "Los cambios en las temperaturas globales, los patrones de precipitación y la frecuencia de eventos climáticos extremos como huracanes, sequías e inundaciones, tienen un impacto profundo en la distribución y supervivencia de las especies. Selecciona la causa principal del desequilibrio ecológico:",
+        "Cambios Climáticos",
+        ["Actividades Humanas", "Políticas ambientales", "Acuerdos internacionales"],
+        "ecs",
+        2,
+        "El cambio climático afecta el equilibrio de los ecosistemas y la distribución de las especies.",
+        true
+    );
+});
+
 });
 let questList = localStorage.getItem("quests");
 questList = JSON.parse(questList);
