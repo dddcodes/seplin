@@ -285,7 +285,6 @@ LS_createItem('quests',()=>{
     );
 });
 
-});
 let questList = localStorage.getItem("quests");
 questList = JSON.parse(questList);
 for (let i = 0; i < defaultQuests.length; i++) {
