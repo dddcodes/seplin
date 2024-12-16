@@ -13,8 +13,8 @@ let asignatureList = [
     ["cs", "Ciencias Sociales"],
     ["ac", "Acompañamiento Académico"],
     ["eco", "Economía"],
-    ["ecs", "Ecosistemas"],
-    ["qui", "Química"]
+    ["qui", "Química"],
+    ["ecs", "Ecosistemas"]
 ];
 
 function completeAsignatureName(abbrev){

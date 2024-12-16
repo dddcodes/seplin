@@ -2,8 +2,18 @@
 /*FUNCTIONS RELATIONATED WITH QUIZ PARTIALS, AND THE LIST OF THEM*/
 
 const partialList = [
-    "Semestre III - Parcial I", "Semestre III - Parcial II", "Semestre III - Parcial III",
-    "Semestre IV - Parcial I", "Semestre IV - Parcial II", "Semestre IV - Parcial III",
+    "Semestre 3 - Parcial I", 
+    "Semestre 3 - Parcial II", 
+    "Semestre 3 - Parcial III",
+    "Semestre 4 - Parcial I", 
+    "Semestre 4 - Parcial II", 
+    "Semestre 4 - Parcial III",
+    "Semestre 5 - Parcial I", 
+    "Semestre 5 - Parcial II", 
+    "Semestre 5 - Parcial III",
+    "Semestre 6 - Parcial I", 
+    "Semestre 6 - Parcial II", 
+    "Semestre 6 - Parcial III"
 ];
 
 function numberToPartial(number){

@@ -16,12 +16,16 @@ const setQuestPage = document.querySelector("#setQuestPage");
 const removeQuestPage = document.querySelector("#removeQuestPage");
 const catalogPage = document.querySelector("#catalogPage");
 const editQuestPage = document.querySelector("#editQuestPage");
+const advancedPage = document.querySelector("#advancedPage");
+
 
 const showRemoveQuestBtnFailMsg = document.querySelector("#showRemoveQuestBtnFailMsg");
 const showRemoveQuestDiv = document.querySelector("#showRemoveQuestDiv");
 
 const catalogGenerateBtn = document.querySelector("#catalog_generateBtn");
 const catalogQuestsArea = document.querySelector("#catalog_questsDiv");
+
+
 //btns:
 const btnsBarBtns = document.querySelectorAll("#btnsBox button");
 
@@ -52,8 +56,10 @@ const catalogRemoveConfirmBtn = document.querySelector("#catalogRemoveConfirmBtn
 const catalogCreateQuestBtn = document.querySelector("#createQuestBtn");
 
 const homeBtn = document.querySelector("#homeBtn");
-const editQuestBtn = document.querySelector(`#editQuestBtn`)
-const createQuestBtn = document.querySelector(`#createQuestBtn`)
+const editQuestBtn = document.querySelector(`#editQuestBtn`);
+const createQuestBtn = document.querySelector(`#createQuestBtn`);
+const advancedPageBtn = document.querySelector(`#advancedPageBtn`);
+
 
 //inputs:
 const cat1FilterInput = document.querySelector("#cat1FilterInput");

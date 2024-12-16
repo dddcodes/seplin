@@ -65,4 +65,4 @@ function LS_addToItem(itemName, newContent){
 };
 function RESET(){
     localStorage.removeItem("quests");
-}; // nunca es usada en la web, pero se puede usar en la consola para limpiar el LS
+}; //BORRA EL LOCAL STORAGE, ELIMINANDO TODO DATO GUARDADO PERMANENTEMENTE
