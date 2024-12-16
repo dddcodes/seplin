@@ -106,12 +106,12 @@
 				<img width="80px" src="./seplin logo.png" style="margin-top: 10px; " alt="seplin logo quiz app web questionaries free netlify study active recall">
 
 				<p class="squareBox " style="color: var(--clr); background: none;">
-					S E P L I N
+					S E P L I N	
 				</p>
 			</div>
 			
 			<p class="niceBox " style="background-color: var(--clr); font-size: 16px;  color: var(--alt-clr);"> 
-			Eficiencia en tu estudio</p>
+			Por Olivares</p>
 
 			<p class="niceBox llamativeBorder" style="margin: 20px 0 0 0; font-size: 20px;"> 
 				El camino del conocimiento comienza con una pregunta</p>
@@ -121,14 +121,15 @@
 
 				<button id="catalogPageBtn" class="menuBtn">TU CATALAGO</button>
 
-				<button id="" class="menuBtn">TUS MATERIAS</button>
+				<button id="asignsPageBtn" class="menuBtn">TUS MATERIAS</button>
 				
 				
 				<br>
 
 				<button id="setQuestPageBtn" class="menuBtn">CREAR</button>
 				
-				<button id="removeQuestPageBtn" class="menuBtn">REMOVER</button>
+				<button id="advancedPageBtn" class="menuBtn">AVANZADO</button>
+				
 		
 			</div>
 
@@ -227,8 +228,6 @@
 		
 				</div>
 			</div>
-			</br>
-			<div><button onclick="RESET()">Resetear app</button></div>
 
 		</main>
 		
@@ -321,6 +320,14 @@
 			</div><br/>
 
 		</main>
+
+		<main id="advancedPage">
+			<button id="removeQuestPageBtn" class="failBorder">Remover un Quiz</button>
+			<br><br>
+			<button onclick="RESET()" class="failBorder">Resetear almacenamiento</button>
+		</main>
+
+
 		<!-- div para mostrar la pregunta -->
 		<main id="questsDiv" class="questBox"></main>
 		<br/>
@@ -336,6 +343,7 @@
 	<script type="text/javascript" src="./Src/Scripts/Consts.js"></script>
 	<script type="text/javascript" src="./Src/Scripts/Asigns.js"></script>
 	<script type="text/javascript" src="./Src/Scripts/Partials.js"></script>
+	<script type="text/javascript" src="./Src/Scripts/DefaultQuizes.js"></script>
     <script type="text/javascript" src="./Src/Scripts/script.js"></script>
 	
 </body>
