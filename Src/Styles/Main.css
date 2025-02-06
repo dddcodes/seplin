@@ -1,0 +1,230 @@
+@import "Btns.css";
+@import "Inputs.css";
+@import "catalog.css";
+@import "StudyQuizBox.css";
+
+:root {
+  --main-clr: #151515;
+  --main-clr-2: #313131;
+  --main-clr-3: #525252;
+  --main-clr-4: #817f7f;
+
+  --alt-clr: var(--main-clr); /*para las letras, bordes, :active, etc*/
+  --clr: white;
+  --green: #38c35d;
+  --red: #ea5858;
+  --clr-2: #9d7e79;
+  --clr-3: #ccac95;
+  --clr-4: #748b83;
+  --clr-5: #5b756c;
+  --blue: rgb(55, 160, 246);
+
+  --llamative-clr: rgba(
+    255,
+    241,
+    0,
+    1
+  ); /*clr llamativo para toda la web, dandole un toque chido y llamativo, etc*/
+  --universal-trans: 200ms; /*tiempo de transicion de un estado a otro*/
+  --universal-border-rad: 4px;
+
+  --nice-combination: linear-gradient(
+    90deg,
+    rgba(255, 241, 0, 1) 0%,
+    rgba(209, 152, 2, 1) 63%,
+    rgb(255, 149, 0) 100%
+  );
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border-radius: var(--universal-border-rad);
+
+  font-family: arial;
+  text-decoration: none;
+  color: var(--clr);
+  cursor: auto;
+  outline: none;
+
+  transition: var(--universal-trans);
+}
+
+*::selection {
+  background: var(--llamative-clr);
+  color: var(--alt-clr);
+}
+
+body {
+  background: var(--main-clr);
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  padding-bottom: 110px;
+}
+
+/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/*/
+
+/*estilos generales*/
+
+.pageContent {
+  width: 95vw;
+  max-width: 900px;
+  min-height: 80vh;
+  margin: 0;
+  margin-top: 65px;
+}
+
+.pageContent > main {
+  display: none;
+}
+
+#welcomePage {
+  width: 100%;
+  margin-top: -40px;
+  border-radius: 0 0 5px 5px;
+}
+
+#welcomePage > .imgBox {
+  background-color: none;
+  background-image: var(--principal-bg-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+#welcomePage > button,
+#welcomePage > a > button {
+  margin-top: 20px;
+}
+
+.answerRevelationDiv {
+  width: 100%;
+}
+
+.answerRevelationDiv * {
+  margin-bottom: 10px;
+}
+
+.niceBox {
+  padding: 5px;
+  border-radius: var(--universal-border-rad);
+  border: var(--main-clr-2) solid 1px;
+}
+
+.simpleBox {
+  width: auto;
+  max-width: 900px;
+  padding: 20px 10px 20px 10px;
+
+  border: var(--main-clr-2) solid 1px;
+
+  border-radius: var(--universal-border-rad);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.success {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.fail {
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+.successBorder {
+  border-color: var(--green);
+}
+
+.failBorder {
+  border-color: var(--red);
+}
+
+.llamativeBorder {
+  border-color: var(--llamative-clr);
+}
+
+.transparent {
+  background: none;
+  border-color: none;
+}
+
+.square {
+  border-radius: 0;
+}
+
+.squareBox {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px 0 20px 0;
+
+  background-color: var(--main-clr-2);
+  border-radius: 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.llamativeClr {
+  background: var(--nice-combination);
+  color: var(--main-clr);
+}
+.llamativeClr::selection {
+  background-color: var(--main-clr);
+  color: var(--llamative-clr);
+}
+
+.simpleBox img {
+  background-color: var(--main-clr-3);
+  outline: none solid 5px;
+  max-width: 300px;
+  border-radius: 6px;
+}
+
+.simpleBox img:hover {
+  outline: var(--clr) solid 2px;
+  background: var(--clr);
+}
+
+.simpleBox > h3 {
+  font-size: 17px;
+  text-align: left;
+  padding: 0 10%;
+}
+
+p a {
+  color: var(--llamative-clr);
+}
+
+.main-clr {
+  background-color: var(--main-clr);
+  color: var(--clr);
+}
+
+#welcomePage > .menuBtnsBox {
+  padding: 10px;
+}
+
+#welcomePage > .menuBtnsBox > .menuBtn {
+  width: 40%;
+  max-width: 350px;
+  height: 130px;
+  padding: 0;
+}
+
+#welcomePage > .menuBtnsBox > .menuBtn:nth-child(n + 3) {
+  font-size: 13px;
+  height: 85px;
+  margin-top: 10px;
+}

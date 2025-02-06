@@ -1,0 +1,151 @@
+
+/*BUTTONS (MAIN PAGE, BUTTONTAB, ETC)*/
+
+button{
+    background-color: var(--main-clr);
+    border: 1px solid var(--main-clr-2);
+    padding: 8px;
+
+    height: 80px;
+    margin: 0 10px 0 10px;
+    min-width: 120px;
+
+    font-size: 16px;
+}
+
+#welcomePage > .buttonDiv{
+    border: 1px solid var(--main-clr-2);
+    background-color: var(--main-clr); 
+    padding: 20px;
+}
+
+
+
+.llamativeBtn{
+    color: var(--main-clr);
+    background-color: var(--llamative-clr);
+    border: var(--llamative-clr) solid 2px;
+
+}
+
+.llamativeBtn:hover{
+    background-color: var(--main-clr);
+    color: var(--llamative-clr);
+    border-color: var(--llamative-clr);
+}
+
+.llamativeBtn:active{
+    background-color: var(--llamative-clr);
+    color: var(--main-clr);
+}
+
+
+/*estilos del menu de btns*/
+
+.btnsBox{
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-clr);
+
+    padding: 0 0 6px 0;
+
+    border-radius: 0;
+    border-top: 1px solid var(--main-clr-2);
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    z-index: 2;
+    position: fixed;
+    bottom: -10px;
+
+}
+.btnsBox > button{
+    display: none;
+}
+
+
+button:hover{
+    background-color: var(--main-clr);
+    border-color: var(--main-clr-3);
+}
+
+button:active{
+    border-color: white;
+}
+
+.miniBtn{
+    height: 30px;
+    min-width: 60px;
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.homeBtn{
+    width: 80px;
+    min-width: 0;
+
+    padding-top: 12px;
+    font-size: 30px;
+}
+
+.homeBtn ion-icon{
+    color: var(--main-clr-4);
+}
+
+.floatBtn{
+    border: 1px solid var(--main-clr-2);
+
+    background-color: var(--main-clr);
+
+    min-width: 0;
+    width: 60px;
+    height: 60px;
+
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    margin-top: 6px;
+    margin-left: 6px;
+    padding: 0;
+}
+
+.floatBtn > ion-icon{
+    color: var(--main-clr-4 );
+    font-size: 35px;
+    margin-bottom: -4px;
+}
+
+.floatBtn:hover{
+    background: var(--main-clr-2);
+    border-color: var(--main-clr-2);
+}
+
+.floatBtn:active{
+    background: var(--main-clr-3);
+    border-color: var(--main-clr-3);
+}
+
+#editQuestFloatBtn{
+    display: none;
+    margin-left: 70px;
+}
+
+#editQuestFloatBtn > ion-icon{
+    font-size: 25px;
+}
+
+.generateQuestsBtn{
+    background-color: var(--clr);
+    color: var(--main-clr);
+    max-width: 150px;
+    border: white solid 2px;
+}
+
+.generateQuestsBtn:hover{
+    background-color: var(--main-clr);
+    color: white;
+
+}

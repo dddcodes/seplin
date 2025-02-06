@@ -1,0 +1,127 @@
+
+/*QUIZ CATALOG STYLES*/
+
+.questionBox{
+    background-color: var(--main-clr-2);
+    border: 2px solid var(--main-clr-2);
+    border-radius: 4px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+
+    text-align: left;
+}
+.questionBox > .headBox{
+    display: flex;
+    height: 30px;
+    font-size: 25px;
+}
+
+
+
+.questionBox > .headBox > .questionNumber{
+    background-color: var(--main-clr-2);
+    width: min-content;
+
+    text-align: center;
+    padding: 0 5px 0 5px;
+    border-radius: 0;
+
+}
+.questionBox > .headBox > .asign{
+    background: var(--main-clr-2);
+    color: var(--clr);
+
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    border-radius: 0;
+
+}
+
+
+
+.questionBox > .questionBtnsBox{
+    height: 30px;
+    display:flex;
+    border-bottom: white solid 2px;
+    border-radius: 10px;
+}
+.questionBox > .questionBtnsBox > button{
+    border-radius: 0;
+    border: 0;
+    min-width: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-clr);
+    margin: 0;
+}
+
+.questionBox > .questionBtnsBox > button:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.questionBox > .questionBtnsBox > button:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+
+.questionBox > .questionBtnsBox > button:hover{
+    background-color: var(--main-clr-2);
+}
+.questionBox > .questionBtnsBox > button:active,
+.questionBox > .questionBtnsBox > button:focus{
+    background-color: var(--main-clr-3);
+}
+
+
+
+.questionBox > .question,
+.questionBox > .partialBox{
+    font-size: 20px;
+    color: var(--llamative-clr);
+    padding: 5px;
+    background-color: var(--main-clr);
+
+}
+
+
+.questionBox > .details{
+    display: none;
+}
+
+.questionBox > .details > *{
+    padding: 5px 0 5px 5px;
+    border-radius: 3px;
+    font-size: 18px;
+
+    margin-top:  2px;
+}
+
+.questionBox > .partialBox{
+    margin-bottom: 2px;
+    color: var(--blue);
+}
+
+
+.questionBox > .partialBox,
+.questionBox > .details > .completeQuestionBox,
+.questionBox > .details > .correctAnswerBox,
+.questionBox > .details > .explanationBox,
+.questionBox > .details > .incorrectAnswersBox{
+    background-color: var(--main-clr);
+}
+
+.questionBox > .details > .completeQuestionBox > .title,
+.questionBox > .details > .correctAnswerBox > .title,
+.questionBox > .details > .explanationBox > .title,
+.questionBox > .details > .incorrectAnswersBox > .title{
+    font-size: 12px;
+    color: var(--main-clr-4);
+}
+
+.questionBox > .details > .incorrectAnswersBox > .content > p{
+    border: var(--main-clr-2) solid 1px;
+    border-radius: 3px;
+
+    padding: 0 7px 0 7px;
+    margin: 5px 5px 0 0;
+}
