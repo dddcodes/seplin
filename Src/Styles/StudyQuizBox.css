@@ -1,0 +1,72 @@
+
+
+/*ESTILOS DE LA CAJA DE LOS QUIZES AL ESTUDIAR*/
+
+
+.quizBox{
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid var(--main-clr-2);
+    margin: 5px 0 5px;
+}
+
+.quizMsgBox{
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid var(--main-clr-2);
+    margin: 5px 0 5px;
+    font-size: 17px;
+    color: var(--main-clr-4);
+}
+
+.quizBox > .details, 
+.quizBox > .details > em{
+    color: var(--main-clr-4);
+    font-size: 17px;
+}
+
+.quizBox > hr{
+    margin: 5px 0 8px;
+}
+
+
+.quizBox > .subBox > .question{
+    
+    border: 1px solid var(--llamative-clr);
+    color: var(--clr);
+    padding: 10px;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+
+.quizBox > .subBox > #answerButtons > .btn{
+    border-radius: 3px;
+    border: 2px solid var(--main-clr-2);
+    background-color: var(--main-clr);
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 7px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.quizBox > .subBox > #answerButtons > .btn:hover{
+    border-color: var(--main-clr-3);
+}
+
+.quizBox > .subBox > #answerButtons > .btn:active{
+    border-color: var(--clr);
+    background-color: var(--clr);
+    color: var(--main-clr);
+}
+
+.quizBox > .subBox > #answerButtons > .btn:disabled{
+    cursor: no-drop;
+}
+
+.quizBox > .subBox > #answerButtons > .btn[disabled]{
+    background-color: var(--main-clr);
+    border-color: var(--main-clr-2);
+}

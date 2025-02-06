@@ -1,0 +1,56 @@
+/*inputs*/
+
+
+
+select, input, textarea{
+    background-color: var(--main-clr);
+    border: var(--main-clr-2) solid 2px;
+    font-size: 17px;
+
+    width: 80%;
+    max-width:800px;
+
+    height: 30px;
+    min-height: 0;
+    padding: 5px;
+}
+select{
+    width: 83%;
+    height: 45px;
+
+}
+
+
+select option{
+    background-color: var(--main-clr);
+    color: var(--clr);
+}
+
+select:hover{
+    border-color: var(--main-clr-3);
+}
+
+select:focus{
+    border-color: white;
+}
+
+input:hover,
+textarea:hover{
+    border-color: var(--main-clr-3);
+}
+
+input:focus,
+textarea:focus{
+    border-color: white;
+}
+
+
+textarea{
+    height: 100px;
+}
+
+#setQuestPage > .simpleBox,
+#editQuestPage > .simpleBox{
+    border-color: var(--main-clr);
+    padding: 10px;
+}
