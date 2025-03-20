@@ -1,5 +1,7 @@
 let defaultQuests = [];
-function setQuest(question = "QUIZ", answer = "ANSWER", 
+function setQuest(
+    question = "QUIZ", 
+    answer = "ANSWER", 
     incorrectAnswer = Array, 
     cat1 = string,cat2 = Boolean, ex = string,
     LS = false){
