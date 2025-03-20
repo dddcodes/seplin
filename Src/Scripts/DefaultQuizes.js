@@ -49,7 +49,7 @@ LS_createItem('quests',()=>{
         "Previene enfermedades y mejora la calidad de vida.",
         ["Solo ayuda a perder peso.", "Reduce el cansancio pero no afecta la salud.", "Hace que la gente coma menos."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La AF previene enfermedades cardiovasculares, metabólicas y mejora el bienestar general.",
         true //NO CAMBIAR
     );
@@ -59,7 +59,7 @@ LS_createItem('quests',()=>{
         "OMS (Organización Mundial de la Salud).",
         ["ONU.", "NASA.", "UNESCO."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La OMS ha realizado estudios y campañas para promover la AF a nivel mundial.",
         true //NO CAMBIAR
     );
@@ -69,7 +69,7 @@ LS_createItem('quests',()=>{
         "Es difícil medir con precisión la intensidad y frecuencia.",
         ["No existen métodos para medir la actividad física.", "Todas las personas hacen la misma cantidad de ejercicio.", "Solo se puede medir en niños y jóvenes."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "Métodos como encuestas y cuestionarios tienen limitaciones en la precisión de los datos.",
         true //NO CAMBIAR
     );
@@ -79,7 +79,7 @@ LS_createItem('quests',()=>{
         "Falta de actividad física y alimentación inadecuada.",
         ["Exceso de proteínas en la dieta.", "Dormir demasiado.", "Hacer ejercicio en exceso."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La obesidad ocurre cuando el consumo calórico supera el gasto energético.",
         true //NO CAMBIAR
     );
@@ -89,7 +89,7 @@ LS_createItem('quests',()=>{
         "Mejora la sensibilidad a la insulina y regula la glucosa.",
         ["Hace que las personas dejen de comer dulces.", "Reduce la presión arterial pero no afecta la glucosa.", "Solo ayuda si se combina con una dieta extrema."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La AF permite que la glucosa se utilice de manera eficiente, reduciendo el riesgo de diabetes tipo II.",
         true //NO CAMBIAR
     );
@@ -99,7 +99,7 @@ LS_createItem('quests',()=>{
         "Reduce la presión arterial y mejora la circulación.",
         ["Hace que el corazón trabaje menos.", "Solo afecta a personas mayores.", "Disminuye la cantidad de sangre en el cuerpo."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "El ejercicio fortalece el corazón y reduce el riesgo de enfermedades cardiovasculares.",
         true //NO CAMBIAR
     );
@@ -109,7 +109,7 @@ LS_createItem('quests',()=>{
         "Cáncer de colon y mama.",
         ["Cáncer de piel y de ojos.", "Cáncer de garganta y nariz.", "Cáncer de huesos y médula espinal."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La AF regula hormonas y mejora funciones inmunológicas, reduciendo ciertos tipos de cáncer.",
         true //NO CAMBIAR
     );
@@ -119,7 +119,7 @@ LS_createItem('quests',()=>{
         "Reduce riesgos cardiovasculares y mejora el metabolismo.",
         ["Solo afecta a personas mayores de 50 años.", "No tiene impacto en el metabolismo.", "Hace que la gente deje de sentir hambre."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La AF ayuda a controlar peso, colesterol, glucosa y presión arterial, reduciendo el riesgo de este síndrome.",
         true //NO CAMBIAR
     );
@@ -129,7 +129,7 @@ LS_createItem('quests',()=>{
         "60 minutos diarios.",
         ["10 minutos diarios.", "3 horas diarias.", "Solo cuando jueguen deportes."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La OMS recomienda 60 min diarios de actividad moderada o intensa en este grupo.",
         true //NO CAMBIAR
     );
@@ -139,7 +139,7 @@ LS_createItem('quests',()=>{
         "150 minutos.",
         ["300 minutos.", "50 minutos.", "No hay recomendación."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "La OMS sugiere 150 min de AF moderada o 75 min intensa cada semana para la salud.",
         true //NO CAMBIAR
     );
@@ -149,7 +149,7 @@ LS_createItem('quests',()=>{
         "Mantiene movilidad, reduce caídas y previene deterioro cognitivo.",
         ["Solo ayuda a bajar de peso.", "No tiene impacto en la salud después de los 65 años.", "Deben evitar la AF para no lesionarse."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "El ejercicio mejora la movilidad, el equilibrio y la salud mental en adultos mayores.",
         true //NO CAMBIAR
     );
@@ -159,7 +159,7 @@ LS_createItem('quests',()=>{
         "México.",
         ["Argentina.", "Venezuela.", "Brasil."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "Según la OCDE, México es el país con más sobrepeso y el segundo en obesidad.",
         true //NO CAMBIAR
     );
@@ -169,7 +169,7 @@ LS_createItem('quests',()=>{
         "46%.",
         ["20%.", "70%.", "10%."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "Encuestas nacionales muestran que casi la mitad de la población en Argentina es inactiva.",
         true //NO CAMBIAR
     );
@@ -179,7 +179,7 @@ LS_createItem('quests',()=>{
         "Alto índice de obesidad y enfermedades cardiovasculares.",
         ["Pérdida de masa muscular extrema.", "Falta de acceso a tecnología.", "Problemas respiratorios."],
         "ef", //NO CAMBIAR
-        1, //NO CAMBIAR
+        0, //NO CAMBIAR
         "El sedentarismo en Venezuela está relacionado con enfermedades metabólicas y cardiovasculares.",
         true //NO CAMBIAR
     );
